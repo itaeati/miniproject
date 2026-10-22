@@ -126,7 +126,7 @@ GitHub 단일 파일 용량 제한(100MB)으로 인해 제외된 `et_bert.onnx.d
    - **터미널(`gdown`) 다운로드 시**:
      ```bash
      pip install gdown
-     gdown <GOOGLE_DRIVE_FILE_ID> -O models/et_bert.onnx.data
+     gdown https://drive.google.com/file/d/19Q6-uemXgpsbxoaHwg0P6dj20txBln0q/view?usp=drive_link -O models/et_bert.onnx.data
      ```
 2. **Hugging Face 원본 모델에서 자동 생성 (`download_model.py`)**:
    ```bash
