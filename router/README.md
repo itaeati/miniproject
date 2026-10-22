@@ -122,12 +122,14 @@ sudo apt install -y build-essential libmnl-dev iptables ethtool
 GitHub 단일 파일 용량 제한(100MB)으로 인해 제외된 `et_bert.onnx.data`(251MB)는 다운로드 후 반드시 **`et_bert.onnx`와 동일한 폴더인 `router/models/et_bert.onnx.data` 경로**에 저장해야 합니다. (ONNX Runtime이 `et_bert.onnx` 로드 시 같은 디렉토리의 `et_bert.onnx.data`를 자동으로 참조합니다.)
 
 1. **Google Drive 공유 링크에서 다운로드**:
-   - **웹 브라우저 다운로드 시**: 다운로드한 `et_bert.onnx.data` 파일을 `router/models/et_bert.onnx.data` 위치로 이동합니다.
-   - **터미널(`gdown`) 다운로드 시**:
-     ```bash
-     pip install gdown
-     gdown https://drive.google.com/file/d/19Q6-uemXgpsbxoaHwg0P6dj20txBln0q/view?usp=drive_link -O models/et_bert.onnx.data
-     ```
+       - **웹 브라우저 다운로드 시**: [et_bert.onnx.data 다운로드 (Google Drive)](https://drive.
+  google.com/file/d/19Q6-uemXgpsbxoaHwg0P6dj20txBln0q/view?usp=drive_link)에서 내려받은 후
+  `router/models/et_bert.onnx.data` 위치로 이동합니다.
+       - **터미널(`gdown`) 다운로드 시**:
+         ```bash
+         pip install gdown
+         gdown 19Q6-uemXgpsbxoaHwg0P6dj20txBln0q -O models/et_bert.onnx.data
+         ```
 2. **Hugging Face 원본 모델에서 자동 생성 (`download_model.py`)**:
    ```bash
    pip install torch transformers onnx onnxscript
