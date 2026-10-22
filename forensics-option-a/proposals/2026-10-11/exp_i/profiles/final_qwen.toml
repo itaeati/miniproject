@@ -1,0 +1,39 @@
+# Experiment I profile "qwen" (per-model part only; prompts, quote binding and scoring are common).
+# Same as experiment G (thinking off, greedy); OpenVINO 2026.4 venv.
+[paths]
+work_dir = "/home/ubuntu/forensics-option-a/hdf_runs"
+attack_stix = "/home/ubuntu/forensics-option-a/data/attack/enterprise-attack.json"
+
+[server]
+python = "/home/ubuntu/forensics-option-a/venv_ov2604/bin/python3"
+script = "/home/ubuntu/server_tools/openvino_server.py"
+device = "GPU"
+port = 8086
+cleanup_command = ["bash", "/home/ubuntu/clean_memory.sh"]
+guard_min_available_mb = 3072
+# Common part (every profile): repetition stop at ratio 0.05 instead of hdf's 0.10. 2026-10-08 replay: real loops
+# <= 0.032, legitimate output >= 0.085; with variable packing a 20-line Gemma answer of similar verdicts was cut at
+# 0.10 (exp I, 2026-10-10 20:42).
+repetition_max_ratio = 0.05
+
+[models.triage]
+name = "Qwen3.8-27B-OV-INT4"
+path = "/home/ubuntu/llama-models/Qwen3.8-27B-OV-INT4"
+enable_thinking = false
+sampling = "model"
+structured_after = ""
+fresh_server_per_request = false
+
+# Not used by experiment I; hdf's config check needs a second model entry.
+[models.reasoner]
+name = "Qwen3.8-27B-OV-INT4"
+path = "/home/ubuntu/llama-models/Qwen3.8-27B-OV-INT4"
+enable_thinking = false
+fresh_server_per_request = false
+
+[harness]
+# Requests are packed variably (whole lines; prompt <= max_input_tokens and prompt + expected answer <= context).
+# Expected answer tokens = output_base + output_per_line * lines. Qwen exp G: answer = 64 + 83.7/line (47 requests), max residual +480.
+output_base = 600
+output_per_line = 110
+evidence_tokens = 4000

@@ -1,0 +1,313 @@
+{
+ "dataset": "win_lsass_comsvcs",
+ "events": 184,
+ "attack_events": 87,
+ "attack_share": 0.4728,
+ "seed_trace": [
+  {
+   "why": "child E17",
+   "guid": null,
+   "host": "workstation5",
+   "pid": 4824
+  },
+  {
+   "why": "child E107",
+   "guid": "39e4a257-d4ad-5f8c-3303-000000000700",
+   "host": "workstation5",
+   "pid": 4824
+  }
+ ],
+ "attack_processes": 4,
+ "by_reason": {
+  "actor": 87,
+  "target": 2,
+  "artifact": 3
+ },
+ "labels": {
+  "1": [
+   "actor"
+  ],
+  "2": [
+   "actor"
+  ],
+  "3": [
+   "actor"
+  ],
+  "4": [
+   "actor"
+  ],
+  "5": [
+   "actor"
+  ],
+  "6": [
+   "actor"
+  ],
+  "7": [
+   "actor"
+  ],
+  "8": [
+   "actor"
+  ],
+  "9": [
+   "actor"
+  ],
+  "10": [
+   "actor"
+  ],
+  "11": [
+   "actor"
+  ],
+  "12": [
+   "actor"
+  ],
+  "13": [
+   "actor"
+  ],
+  "14": [
+   "actor"
+  ],
+  "15": [
+   "actor"
+  ],
+  "16": [
+   "actor"
+  ],
+  "17": [
+   "actor",
+   "target",
+   "artifact:lsass-comsvcs.dmp"
+  ],
+  "18": [
+   "actor"
+  ],
+  "19": [
+   "actor"
+  ],
+  "20": [
+   "actor"
+  ],
+  "21": [
+   "actor"
+  ],
+  "22": [
+   "actor"
+  ],
+  "23": [
+   "actor"
+  ],
+  "24": [
+   "actor"
+  ],
+  "25": [
+   "actor"
+  ],
+  "26": [
+   "actor"
+  ],
+  "27": [
+   "actor"
+  ],
+  "64": [
+   "actor"
+  ],
+  "65": [
+   "actor"
+  ],
+  "68": [
+   "actor"
+  ],
+  "69": [
+   "actor"
+  ],
+  "72": [
+   "actor"
+  ],
+  "73": [
+   "actor"
+  ],
+  "74": [
+   "actor"
+  ],
+  "75": [
+   "actor",
+   "artifact:lsass-comsvcs.dmp"
+  ],
+  "76": [
+   "actor"
+  ],
+  "78": [
+   "actor"
+  ],
+  "81": [
+   "actor"
+  ],
+  "82": [
+   "actor"
+  ],
+  "83": [
+   "actor"
+  ],
+  "84": [
+   "actor"
+  ],
+  "85": [
+   "actor"
+  ],
+  "86": [
+   "actor"
+  ],
+  "87": [
+   "actor"
+  ],
+  "88": [
+   "actor"
+  ],
+  "89": [
+   "actor"
+  ],
+  "90": [
+   "actor"
+  ],
+  "91": [
+   "actor"
+  ],
+  "92": [
+   "actor"
+  ],
+  "93": [
+   "actor"
+  ],
+  "94": [
+   "actor"
+  ],
+  "95": [
+   "actor"
+  ],
+  "96": [
+   "actor"
+  ],
+  "97": [
+   "actor"
+  ],
+  "98": [
+   "actor"
+  ],
+  "99": [
+   "actor"
+  ],
+  "100": [
+   "actor"
+  ],
+  "101": [
+   "actor"
+  ],
+  "102": [
+   "actor"
+  ],
+  "103": [
+   "actor"
+  ],
+  "104": [
+   "actor"
+  ],
+  "106": [
+   "actor",
+   "target"
+  ],
+  "107": [
+   "actor",
+   "artifact:lsass-comsvcs.dmp"
+  ],
+  "108": [
+   "actor"
+  ],
+  "109": [
+   "actor"
+  ],
+  "110": [
+   "actor"
+  ],
+  "111": [
+   "actor"
+  ],
+  "112": [
+   "actor"
+  ],
+  "113": [
+   "actor"
+  ],
+  "114": [
+   "actor"
+  ],
+  "115": [
+   "actor"
+  ],
+  "116": [
+   "actor"
+  ],
+  "117": [
+   "actor"
+  ],
+  "118": [
+   "actor"
+  ],
+  "119": [
+   "actor"
+  ],
+  "120": [
+   "actor"
+  ],
+  "121": [
+   "actor"
+  ],
+  "122": [
+   "actor"
+  ],
+  "123": [
+   "actor"
+  ],
+  "124": [
+   "actor"
+  ],
+  "125": [
+   "actor"
+  ],
+  "126": [
+   "actor"
+  ],
+  "127": [
+   "actor"
+  ],
+  "128": [
+   "actor"
+  ],
+  "129": [
+   "actor"
+  ],
+  "130": [
+   "actor"
+  ],
+  "131": [
+   "actor"
+  ]
+ },
+ "ambiguous_target_only": [
+  77,
+  79,
+  80,
+  105
+ ],
+ "near_unattributed": {},
+ "spec": {
+  "seed_pid": [
+   [
+    "WORKSTATION5",
+    6100
+   ]
+  ],
+  "artifacts": [
+   "lsass-comsvcs.dmp"
+  ],
+  "source": "SDWIN-201018195009 + README 5.14 (PowerShell 6100 -> rundll32 4824)"
+ }
+}

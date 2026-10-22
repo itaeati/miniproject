@@ -1,0 +1,5146 @@
+{
+ "per_run": [
+  {
+   "model": "final_fsec",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_fsec/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 29,
+      "attack": 58
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 50,
+      "normal": 43
+     },
+     "excluded": {
+      "normal": 3,
+      "attack": 1
+     }
+    },
+    "recall": 0.667,
+    "fp_rate": 0.538,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.538,
+    "no_verdict": 0,
+    "attack_unbound": 13,
+    "recall_unbound": 7,
+    "fp_unbound": 6
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "normal": 23,
+      "attack": 64
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 81,
+      "normal": 12
+     },
+     "excluded": {
+      "attack": 4
+     }
+    },
+    "recall": 0.736,
+    "fp_rate": 0.871,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.871,
+    "no_verdict": 0,
+    "attack_unbound": 23,
+    "recall_unbound": 7,
+    "fp_unbound": 16
+   },
+   "requests": 80,
+   "gen_seconds": 7396,
+   "finish": {
+    "stop": 80
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 121,
+   "max_prompt_tokens": 10010,
+   "missed_attack": [
+    {
+     "event": 1,
+     "verdict": "normal",
+     "reason": "Legitimate process termination with success code"
+    },
+    {
+     "event": 19,
+     "verdict": "normal",
+     "reason": "Querying registry keys is a common administrative action."
+    },
+    {
+     "event": 20,
+     "verdict": "normal",
+     "reason": "Standard registry interaction"
+    },
+    {
+     "event": 21,
+     "verdict": "normal",
+     "reason": "Closing handles is a normal operation."
+    },
+    {
+     "event": 23,
+     "verdict": "normal",
+     "reason": "Closing handles is a normal operation."
+    },
+    {
+     "event": 24,
+     "verdict": "normal",
+     "reason": "Querying registry keys is a common administrative action."
+    },
+    {
+     "event": 25,
+     "verdict": "normal",
+     "reason": "Normal registry access"
+    },
+    {
+     "event": 26,
+     "verdict": "normal",
+     "reason": "Closing handles is a normal operation."
+    },
+    {
+     "event": 27,
+     "verdict": "normal",
+     "reason": "Handle duplication can occur legitimately during process interactions."
+    },
+    {
+     "event": 64,
+     "verdict": "normal",
+     "reason": "Confirmed process termination event"
+    },
+    {
+     "event": 83,
+     "verdict": "normal",
+     "reason": "Standard dll loaded by rundll32.exe"
+    },
+    {
+     "event": 84,
+     "verdict": "normal",
+     "reason": "Standard window management dll loaded by rundll32.exe"
+    },
+    {
+     "event": 85,
+     "verdict": "normal",
+     "reason": "Graphics rendering library loaded by rundll32.exe"
+    },
+    {
+     "event": 95,
+     "verdict": "normal",
+     "reason": "Common windows library loaded by rundll32.exe"
+    },
+    {
+     "event": 96,
+     "verdict": "normal",
+     "reason": "Standard user interface component loaded by rundll32.exe"
+    },
+    {
+     "event": 97,
+     "verdict": "normal",
+     "reason": "Core cryptographic library loaded by rundll32.exe"
+    },
+    {
+     "event": 98,
+     "verdict": "normal",
+     "reason": "Common rpc runtime loaded by rundll32.exe"
+    },
+    {
+     "event": 99,
+     "verdict": "normal",
+     "reason": "Universal c runtime loaded by rundll32.exe"
+    },
+    {
+     "event": 100,
+     "verdict": "normal",
+     "reason": "Component object model base loaded by rundll32.exe"
+    },
+    {
+     "event": 101,
+     "verdict": "normal",
+     "reason": "Legacy c runtime loaded by rundll32.exe"
+    },
+    {
+     "event": 102,
+     "verdict": "normal",
+     "reason": "Core kernel base loaded by rundll32.exe"
+    },
+    {
+     "event": 103,
+     "verdict": "normal",
+     "reason": "Core operating system api loaded by rundll32.exe"
+    },
+    {
+     "event": 104,
+     "verdict": "normal",
+     "reason": "Windows native driver loader loaded by rundll32.exe"
+    }
+   ],
+   "false_positives": [
+    {
+     "event": 30,
+     "window": "benign_bw",
+     "reason": "Same application waappagent.exe initiated an outbound connection after the bind event."
+    },
+    {
+     "event": 31,
+     "window": "benign_bw",
+     "reason": "Uncertain activity involving waappagent.exe and a local port bind"
+    },
+    {
+     "event": 36,
+     "window": "benign_bw",
+     "reason": "Unclear context prevents confirming legitimacy; may indicate malicious activity."
+    },
+    {
+     "event": 37,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe, a ransomware prevention tool, suggests malicious actors attempting to disable security measures"
+    },
+    {
+     "event": 38,
+     "window": "benign_bw",
+     "reason": "Repetition of PowerShell.exe access following Raccine access indicates potential payload delivery or defense evasion"
+    },
+    {
+     "event": 39,
+     "window": "benign_bw",
+     "reason": "Access to InputApp.exe during suspicious activity sequence may relate to lateral movement or data exfiltration"
+    },
+    {
+     "event": 40,
+     "window": "benign_bw",
+     "reason": "Unusual svchost spawning another svchost process raises suspicion."
+    },
+    {
+     "event": 41,
+     "window": "benign_bw",
+     "reason": "Direct memory access between two svchost.exe processes may indicate process injection or privilege escalation."
+    },
+    {
+     "event": 42,
+     "window": "benign_bw",
+     "reason": "Modification of UserAssist with an arbitrary value may indicate malicious intent."
+    },
+    {
+     "event": 43,
+     "window": "benign_bw",
+     "reason": "Continuation of obfuscated registry modifications under UserAssist indicates ongoing malicious activity"
+    },
+    {
+     "event": 44,
+     "window": "benign_bw",
+     "reason": "Repeated SetValue events to ActivityDataModel may indicate manipulation of telemetry."
+    },
+    {
+     "event": 45,
+     "window": "benign_bw",
+     "reason": "Self-access by svchost.exe during attack period"
+    },
+    {
+     "event": 46,
+     "window": "benign_bw",
+     "reason": "Self-access by svchost.exe during attack period"
+    },
+    {
+     "event": 47,
+     "window": "benign_bw",
+     "reason": "Repeated SetValue events to ActivityDataModel may indicate manipulation of telemetry."
+    },
+    {
+     "event": 48,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 49,
+     "window": "benign_bw",
+     "reason": "Access to PowerShell.exe with high privileges"
+    },
+    {
+     "event": 50,
+     "window": "benign_bw",
+     "reason": "Access to PowerShell.exe with high privileges"
+    },
+    {
+     "event": 51,
+     "window": "benign_bw",
+     "reason": "Access to PowerShell.exe with high privileges"
+    },
+    {
+     "event": 52,
+     "window": "benign_bw",
+     "reason": "Access to PowerShell.exe with high privileges"
+    },
+    {
+     "event": 53,
+     "window": "benign_bw",
+     "reason": "Suspicious registry modification involving HRZR_PGYFRFFVBA."
+    },
+    {
+     "event": 54,
+     "window": "benign_bw",
+     "reason": "Registry SetValue to suspicious UserAssist path"
+    },
+    {
+     "event": 55,
+     "window": "benign_bw",
+     "reason": "Access to PowerShell.exe with high privileges"
+    },
+    {
+     "event": 56,
+     "window": "benign_bw",
+     "reason": "Repeated access to PowerShell.exe by Explorer.exe suggests potential script execution or malicious activity."
+    },
+    {
+     "event": 57,
+     "window": "benign_bw",
+     "reason": "Repetitive access to PowerShell.exe by Explorer.exe indicates automated or scripted behavior, possibly malicious."
+    },
+    {
+     "event": 58,
+     "window": "benign_bw",
+     "reason": "Accessed conhost.exe with high privilege"
+    },
+    {
+     "event": 59,
+     "window": "benign_bw",
+     "reason": "Multiple accesses to conhost.exe by Explorer.exe in quick succession may indicate shell spawning or command execution"
+    },
+    {
+     "event": 60,
+     "window": "benign_bw",
+     "reason": "Consecutive accesses to conhost.exe by Explorer.exe suggest repeated command execution or interactive sessions"
+    },
+    {
+     "event": 61,
+     "window": "benign_bw",
+     "reason": "Continued access to conhost.exe by Explorer.exe implies persistent command-line activity"
+    },
+    {
+     "event": 62,
+     "window": "benign_bw",
+     "reason": "Final access to conhost.exe by Explorer.exe reinforces rapid command execution patterns"
+    },
+    {
+     "event": 66,
+     "window": "benign_bw",
+     "reason": "Interaction with MsMpEng.exe suggests possible tampering with security software"
+    },
+    {
+     "event": 67,
+     "window": "benign_bw",
+     "reason": "Interaction with MsMpEng.exe suggests possible tampering with security software"
+    },
+    {
+     "event": 70,
+     "window": "benign_bw",
+     "reason": "Interaction with MsMpEng.exe suggests possible tampering with security software"
+    },
+    {
+     "event": 71,
+     "window": "benign_bw",
+     "reason": "Interaction with MsMpEng.exe suggests possible tampering with security software"
+    },
+    {
+     "event": 132,
+     "window": "benign_bw",
+     "reason": "Registry modification"
+    },
+    {
+     "event": 133,
+     "window": "benign_bw",
+     "reason": "Abnormal registry key structure suggesting malicious redirection or hidden process tracking."
+    },
+    {
+     "event": 134,
+     "window": "benign_bw",
+     "reason": "Self-access by svchost.exe during attack period"
+    },
+    {
+     "event": 135,
+     "window": "benign_bw",
+     "reason": "Self-access by svchost.exe during attack period"
+    },
+    {
+     "event": 136,
+     "window": "benign_bw",
+     "reason": "Self-access by svchost.exe during attack period"
+    },
+    {
+     "event": 137,
+     "window": "benign_bw",
+     "reason": "Self-access by svchost.exe during attack period"
+    },
+    {
+     "event": 138,
+     "window": "benign_bw",
+     "reason": "Access to PowerShell.exe with high privileges"
+    },
+    {
+     "event": 139,
+     "window": "benign_bw",
+     "reason": "Registry modification"
+    },
+    {
+     "event": 140,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 141,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 142,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 143,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 144,
+     "window": "benign_bw",
+     "reason": "Accessed conhost.exe with high privilege"
+    },
+    {
+     "event": 145,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 146,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 148,
+     "window": "benign_bw",
+     "reason": "Access to conhost.exe with high privileges"
+    },
+    {
+     "event": 149,
+     "window": "benign_bw",
+     "reason": "Access to conhost.exe with high privileges"
+    },
+    {
+     "event": 150,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 151,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe with high privileges"
+    },
+    {
+     "event": 152,
+     "window": "benign_bw",
+     "reason": "Registry modification under FeatureUsage key"
+    },
+    {
+     "event": 153,
+     "window": "benign_bw",
+     "reason": "Registry key creation under suspicious path, indicating potential persistence mechanism modification."
+    },
+    {
+     "event": 154,
+     "window": "benign_bw",
+     "reason": "Modification of ActivityDataModel ReaderRevisionInfo registry key."
+    },
+    {
+     "event": 155,
+     "window": "benign_bw",
+     "reason": "Registry modification to a suspiciously named key under ReaderRevisionInfo"
+    },
+    {
+     "event": 156,
+     "window": "benign_bw",
+     "reason": "Registry modification under UserAssist key"
+    },
+    {
+     "event": 157,
+     "window": "benign_bw",
+     "reason": "Registry modification under UserAssist key"
+    },
+    {
+     "event": 158,
+     "window": "benign_bw",
+     "reason": "Access to Raccine.exe matches prior attack context"
+    },
+    {
+     "event": 159,
+     "window": "benign_bw",
+     "reason": "Powershell.exe launched by Explorer.exe with high access rights, consistent with attacker tool usage."
+    },
+    {
+     "event": 160,
+     "window": "benign_bw",
+     "reason": "Suspicious process execution under Explorer.exe, possibly for input capture or data exfiltration."
+    },
+    {
+     "event": 162,
+     "window": "benign_bw",
+     "reason": "The target process is Explorer.EXE, which in the attack context was involved in spawning suspicious child processes and interacting with registry keys associate"
+    },
+    {
+     "event": 163,
+     "window": "benign_bw",
+     "reason": "Registry modification under Notifications path with non-standard GUID points to possible malware persistence"
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "Registry SetValue under HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\VFUProvider may indicate unauthorized modification"
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "Registry key creation at suspicious path"
+    },
+    {
+     "event": 166,
+     "window": "benign_bw",
+     "reason": "Process creation access immediately after attack"
+    },
+    {
+     "event": 167,
+     "window": "benign_bw",
+     "reason": "Process creation access during attack window"
+    },
+    {
+     "event": 168,
+     "window": "benign_bw",
+     "reason": "Target process ID differs from prior attack targets"
+    },
+    {
+     "event": 169,
+     "window": "benign_bw",
+     "reason": "Thread ID change during attack sequence"
+    },
+    {
+     "event": 170,
+     "window": "benign_bw",
+     "reason": "Process creation access during active attack phase"
+    },
+    {
+     "event": 171,
+     "window": "benign_bw",
+     "reason": "Thread ID reuse during attack"
+    },
+    {
+     "event": 172,
+     "window": "benign_bw",
+     "reason": "Specific lsm.dll function calls observed during attack"
+    },
+    {
+     "event": 173,
+     "window": "benign_bw",
+     "reason": "Variation in lsm.dll call traces during attack"
+    },
+    {
+     "event": 174,
+     "window": "benign_bw",
+     "reason": "Repeated lsm.dll call traces during attack"
+    },
+    {
+     "event": 175,
+     "window": "benign_bw",
+     "reason": "Additional variation in lsm.dll call traces"
+    },
+    {
+     "event": 176,
+     "window": "benign_bw",
+     "reason": "Different lsm.dll function call during attack"
+    },
+    {
+     "event": 177,
+     "window": "benign_bw",
+     "reason": "Thread ID reuse during attack continuation"
+    },
+    {
+     "event": 178,
+     "window": "benign_bw",
+     "reason": "Final lsm.dll call traces during attack"
+    },
+    {
+     "event": 182,
+     "window": "benign_bw",
+     "reason": "Syscall between two svchost.exe processes immediately following attack activity"
+    },
+    {
+     "event": 183,
+     "window": "benign_bw",
+     "reason": "Syscall follows recent attack events"
+    },
+    {
+     "event": 184,
+     "window": "benign_bw",
+     "reason": "The event originates from the malicious svchost.exe process (PID 404) accessing another svchost.exe process (PID 3172), aligning with the observed internal comm"
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "final_gemma",
+   "dataset": "win_auditpol_disable",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_gemma/win_auditpol_disable",
+   "classes": {
+    "benign_bw": 50,
+    "attack": 95,
+    "excluded": 5
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "attack": 42,
+      "normal": 53
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "normal": 50
+     },
+     "excluded": {
+      "normal": 5
+     }
+    },
+    "recall": 0.442,
+    "fp_rate": 0.0,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.0,
+    "no_verdict": 0,
+    "attack_unbound": 0,
+    "recall_unbound": 0,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 89,
+      "normal": 6
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "normal": 50
+     },
+     "excluded": {
+      "normal": 3,
+      "attack": 2
+     }
+    },
+    "recall": 0.937,
+    "fp_rate": 0.0,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.0,
+    "no_verdict": 0,
+    "attack_unbound": 6,
+    "recall_unbound": 6,
+    "fp_unbound": 0
+   },
+   "requests": 54,
+   "gen_seconds": 2710,
+   "finish": {
+    "stop": 54
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 41,
+   "max_prompt_tokens": 7738,
+   "techniques": {
+    "truth": [
+     "T1562.002"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1562.002"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null
+   },
+   "missed_attack": [
+    {
+     "event": 7098,
+     "verdict": "normal",
+     "reason": "The process auditpol.exe is loading standard system DLLs."
+    },
+    {
+     "event": 7099,
+     "verdict": "normal",
+     "reason": "The process auditpol.exe is loading standard system DLLs."
+    },
+    {
+     "event": 7100,
+     "verdict": "normal",
+     "reason": "The process auditpol.exe is loading standard system DLLs."
+    },
+    {
+     "event": 7101,
+     "verdict": "normal",
+     "reason": "The process auditpol.exe is loading standard system DLLs."
+    },
+    {
+     "event": 7102,
+     "verdict": "normal",
+     "reason": "The process auditpol.exe is loading standard system DLLs."
+    },
+    {
+     "event": 7103,
+     "verdict": "normal",
+     "reason": "The process auditpol.exe is loading standard system DLLs."
+    }
+   ],
+   "false_positives": [],
+   "status": "ok"
+  },
+  {
+   "model": "final_gemma",
+   "dataset": "win_bitsadmin_download",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_gemma/win_bitsadmin_download",
+   "classes": {
+    "benign_bw": 44,
+    "excluded": 9,
+    "attack": 28,
+    "benign_aw": 44
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 24,
+      "attack": 4
+     },
+     "benign_aw": {
+      "normal": 42,
+      "attack": 2
+     },
+     "benign_bw": {
+      "normal": 38,
+      "attack": 6
+     },
+     "excluded": {
+      "attack": 8,
+      "normal": 1
+     }
+    },
+    "recall": 0.143,
+    "fp_rate": 0.091,
+    "fp_rate_attack_windows": 0.045,
+    "fp_rate_benign_windows": 0.136,
+    "no_verdict": 0,
+    "attack_unbound": 0,
+    "recall_unbound": 0,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 28
+     },
+     "benign_aw": {
+      "normal": 9,
+      "attack": 35
+     },
+     "benign_bw": {
+      "attack": 21,
+      "normal": 23
+     },
+     "excluded": {
+      "attack": 9
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.636,
+    "fp_rate_attack_windows": 0.795,
+    "fp_rate_benign_windows": 0.477,
+    "no_verdict": 0,
+    "attack_unbound": 1,
+    "recall_unbound": 1,
+    "fp_unbound": 0
+   },
+   "requests": 51,
+   "gen_seconds": 2567,
+   "finish": {
+    "stop": 51
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 30,
+   "max_prompt_tokens": 11858,
+   "techniques": {
+    "truth": [
+     "T1197"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1197"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null
+   },
+   "missed_attack": [],
+   "false_positives": [
+    {
+     "event": 89,
+     "window": "benign_bw",
+     "reason": "The event shows process 944 accessing target process 1408, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 92,
+     "window": "benign_bw",
+     "reason": "The event shows process 944 accessing target process 4368, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 93,
+     "window": "benign_bw",
+     "reason": "The event shows process 944 accessing target process 1408, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 94,
+     "window": "benign_bw",
+     "reason": "The TargetObject matches the registry path used in the malicious activity."
+    },
+    {
+     "event": 95,
+     "window": "benign_bw",
+     "reason": "The registry value indicates cmd.exe was launched via the AppSwitched feature usage tracker."
+    },
+    {
+     "event": 96,
+     "window": "benign_bw",
+     "reason": "The process interaction involves a process (conhost.exe) related to the execution of cmd.exe seen in the attack lines."
+    },
+    {
+     "event": 97,
+     "window": "benign_bw",
+     "reason": "The process interaction involves a process (conhost.exe) related to the execution of cmd.exe seen in the attack lines."
+    },
+    {
+     "event": 98,
+     "window": "benign_bw",
+     "reason": "The process interaction involves a process (conhost.exe) related to the execution of cmd.exe seen in the attack lines."
+    },
+    {
+     "event": 99,
+     "window": "benign_bw",
+     "reason": "The event shows process 944 (SourceProcessId) accessing process 1820 (TargetProcessId), which is the same source process and target process relationship seen in"
+    },
+    {
+     "event": 100,
+     "window": "benign_bw",
+     "reason": "The process interaction involves a process (conhost.exe) related to the execution of cmd.exe seen in the attack lines."
+    },
+    {
+     "event": 103,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings 'JvaqbjfCbjreFuryy' and 'cbjrefuryy.rkr' within the UserAssist registry key."
+    },
+    {
+     "event": 104,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings in UserAssist."
+    },
+    {
+     "event": 109,
+     "window": "benign_bw",
+     "reason": "The process interaction involves powershell.exe via an Explorer.EXE process acting on registry keys."
+    },
+    {
+     "event": 267,
+     "window": "benign_bw",
+     "reason": "The event shows process 756 (lsass.exe) accessing svchost.exe (SourceProcessId 4696) which is the same source process/ID relationship seen in the attack line wh"
+    },
+    {
+     "event": 268,
+     "window": "benign_bw",
+     "reason": "The target process matches the process being accessed by the source process in the attack line."
+    },
+    {
+     "event": 269,
+     "window": "benign_bw",
+     "reason": "The source process 756 (lsass.exe) is interacting with process 4696 (svchost.exe) which is the same source process/target relationship seen in the attack line."
+    },
+    {
+     "event": 270,
+     "window": "benign_bw",
+     "reason": "The process svchost.exe (PID 404) is accessing lsass.exe (PID 756) with access mask 0x1000."
+    },
+    {
+     "event": 271,
+     "window": "benign_bw",
+     "reason": "The timestamp matches the attack event A1/A2."
+    },
+    {
+     "event": 272,
+     "window": "benign_bw",
+     "reason": "The source process 756 (lsass.exe) is interacting with process 4696 (svchost.exe) which is the source of the malicious access in the attack line."
+    },
+    {
+     "event": 273,
+     "window": "benign_bw",
+     "reason": "The process svchost.exe (PID 404) is accessing lsass.exe (PID 756) with access mask 0x1000."
+    },
+    {
+     "event": 274,
+     "window": "benign_bw",
+     "reason": "The timestamp is nearly identical to the attack event A1/A2 and involves the same source and target processes."
+    },
+    {
+     "event": 326,
+     "window": "benign_aw",
+     "reason": "The source process 756 (lsass.exe) is interacting with process 4696 (svchost.exe), which is the same source process/target relationship seen in the attack line "
+    },
+    {
+     "event": 327,
+     "window": "benign_aw",
+     "reason": "The source process 756 (lsass.exe) is accessing svchost.exe (PID 4696) which is the same source process in the attack line that then targets bitsadmin.exe."
+    },
+    {
+     "event": 328,
+     "window": "benign_aw",
+     "reason": "The source process 1084 is seen interacting with process 4696, which in turn accesses bitsadmin.exe in the attack line."
+    },
+    {
+     "event": 331,
+     "window": "benign_aw",
+     "reason": "The BITS process (4696) is creating a temporary file, which is a result of the BITS-related activity seen in A1."
+    },
+    {
+     "event": 332,
+     "window": "benign_aw",
+     "reason": "This is the same temporary file created by the BITS process (4696)."
+    },
+    {
+     "event": 333,
+     "window": "benign_aw",
+     "reason": "This is a DLL load for the BITS service process, which is the acting process for the malicious activity."
+    },
+    {
+     "event": 335,
+     "window": "benign_aw",
+     "reason": "The file creation by svchost.exe matches the file path and name seen in the attack context."
+    },
+    {
+     "event": 336,
+     "window": "benign_aw",
+     "reason": "This DLL load occurs during the same timeframe as the suspicious process activity."
+    },
+    {
+     "event": 337,
+     "window": "benign_aw",
+     "reason": "Registry key creation for internet settings is part of the BITS-related activity seen in the attack context."
+    },
+    {
+     "event": 338,
+     "window": "benign_aw",
+     "reason": "This is a module load event occurring during the suspicious activity window."
+    },
+    {
+     "event": 339,
+     "window": "benign_aw",
+     "reason": "This is a module load event occurring during the suspicious activity window."
+    },
+    {
+     "event": 340,
+     "window": "benign_aw",
+     "reason": "Registry key creation for user-specific internet settings matches the BITS activity pattern."
+    },
+    {
+     "event": 341,
+     "window": "benign_aw",
+     "reason": "Registry key creation for network parameters is part of the network-related activity."
+    },
+    {
+     "event": 342,
+     "window": "benign_aw",
+     "reason": "Registry key creation for network parameters is part of the network-related activity."
+    },
+    {
+     "event": 343,
+     "window": "benign_aw",
+     "reason": "Registry key creation for network parameters is part of the network-related activity."
+    },
+    {
+     "event": 344,
+     "window": "benign_aw",
+     "reason": "Registry key creation for network parameters is part of the network-related activity."
+    },
+    {
+     "event": 362,
+     "window": "benign_aw",
+     "reason": "Registry key creation for certificates is part of the process activity."
+    },
+    {
+     "event": 363,
+     "window": "benign_aw",
+     "reason": "Registry key creation for certificates is part of the process activity."
+    },
+    {
+     "event": 364,
+     "window": "benign_aw",
+     "reason": "Registry key creation for certificates is part of the process activity."
+    },
+    {
+     "event": 365,
+     "window": "benign_aw",
+     "reason": "This is a module load event occurring during the suspicious activity window."
+    },
+    {
+     "event": 366,
+     "window": "benign_aw",
+     "reason": "Raw access read is a suspicious action occurring during the activity."
+    },
+    {
+     "event": 367,
+     "window": "benign_aw",
+     "reason": "This is a module load event occurring during the suspicious activity window."
+    },
+    {
+     "event": 368,
+     "window": "benign_aw",
+     "reason": "Registry key creation for internet settings matches the BITS-related activity."
+    },
+    {
+     "event": 369,
+     "window": "benign_aw",
+     "reason": "The file target matches the temporary file created during the attack."
+    },
+    {
+     "event": 370,
+     "window": "benign_aw",
+     "reason": "The file target matches the temporary file created during the attack."
+    },
+    {
+     "event": 384,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 4368, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 385,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 1408, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 386,
+     "window": "benign_aw",
+     "reason": "The TargetObject contains obfuscated strings in the UserAssist registry key."
+    },
+    {
+     "event": 387,
+     "window": "benign_aw",
+     "reason": "The TargetObject contains obfuscated strings in UserAssist."
+    },
+    {
+     "event": 389,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 4368, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 390,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 1408, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 392,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 4368, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 393,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 1408, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 394,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 4368, which matches the pattern of the attack lines."
+    },
+    {
+     "event": 395,
+     "window": "benign_aw",
+     "reason": "The event shows process 944 accessing target process 1408, which matches the pattern of the attack lines."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "final_gemma",
+   "dataset": "win_ntds_ntdsutil",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_gemma/win_ntds_ntdsutil",
+   "classes": {
+    "benign_bw": 45,
+    "attack": 70,
+    "excluded": 12,
+    "benign_aw": 23
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "attack": 70
+     },
+     "benign_aw": {
+      "normal": 23
+     },
+     "benign_bw": {
+      "normal": 41,
+      "attack": 4
+     },
+     "excluded": {
+      "normal": 8,
+      "attack": 4
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.059,
+    "fp_rate_attack_windows": 0.0,
+    "fp_rate_benign_windows": 0.089,
+    "no_verdict": 0,
+    "attack_unbound": 22,
+    "recall_unbound": 22,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 70
+     },
+     "benign_aw": {
+      "normal": 23
+     },
+     "benign_bw": {
+      "normal": 27,
+      "attack": 18
+     },
+     "excluded": {
+      "normal": 8,
+      "attack": 4
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.265,
+    "fp_rate_attack_windows": 0.0,
+    "fp_rate_benign_windows": 0.4,
+    "no_verdict": 0,
+    "attack_unbound": 23,
+    "recall_unbound": 22,
+    "fp_unbound": 1
+   },
+   "requests": 65,
+   "gen_seconds": 2885,
+   "finish": {
+    "stop": 65
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 78,
+   "max_prompt_tokens": 6549,
+   "techniques": {
+    "truth": [
+     "T1003.003"
+    ],
+    "concluded": [
+     "T1003.003"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": 1.0,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1003.003"
+    ],
+    "concluded": [
+     "T1003"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 1,
+    "evidence_recall": null
+   },
+   "missed_attack": [],
+   "false_positives": [
+    {
+     "event": 670,
+     "window": "benign_bw",
+     "reason": "The handle ID 0x285430f7340 is being closed by process 0x258 (lsass.exe) as shown in the context."
+    },
+    {
+     "event": 672,
+     "window": "benign_bw",
+     "reason": "The handle ID 0x285430f5a40 is being closed by process 0x258 (lsass.exe) as shown in the context."
+    },
+    {
+     "event": 673,
+     "window": "benign_bw",
+     "reason": "The handle ID 0x285430f8740 is being used by process 0x258 (lsass.exe) as shown in the context."
+    },
+    {
+     "event": 674,
+     "window": "benign_bw",
+     "reason": "The process lsass.exe (PID 0x258) is performing operations seen in the attack logs where the same process (PID 600) is interacting with sensitive objects via ha"
+    },
+    {
+     "event": 675,
+     "window": "benign_bw",
+     "reason": "The process ID 0x258 (600) matches the source process ID in the attack lines."
+    },
+    {
+     "event": 677,
+     "window": "benign_bw",
+     "reason": "The process ID 0x258 (600) matches the source process ID in the attack lines."
+    },
+    {
+     "event": 678,
+     "window": "benign_bw",
+     "reason": "The process lsass.exe (0x258) is requesting a handle to a domain object (CN=Builtin) which correlates with the source process in the attack lines."
+    },
+    {
+     "event": 679,
+     "window": "benign_bw",
+     "reason": "The process lsass.exe (0x258) is requesting a handle to a SAM alias, consistent with the source process in the attack lines."
+    },
+    {
+     "event": 680,
+     "window": "benign_bw",
+     "reason": "This is a handle closure event for the same object and handle ID seen in the attack line L1."
+    },
+    {
+     "event": 682,
+     "window": "benign_bw",
+     "reason": "The process ID 0x258 matches the source process ID in the attack lines."
+    },
+    {
+     "event": 683,
+     "window": "benign_bw",
+     "reason": "The event shows a handle request for a SAM object by the same process (0x258) involved in the attack."
+    },
+    {
+     "event": 684,
+     "window": "benign_bw",
+     "reason": "The event shows a handle request for a SAM object by the same process (0x258) involved in the attack."
+    },
+    {
+     "event": 685,
+     "window": "benign_bw",
+     "reason": "The handle ID 0x285430f7340 matches the context of the process activity in the attack lines."
+    },
+    {
+     "event": 687,
+     "window": "benign_bw",
+     "reason": "The handle ID 0x285430f7d40 matches the context of the process activity in the attack lines."
+    },
+    {
+     "event": 6867,
+     "window": "benign_bw",
+     "reason": "The source process lsass.exe is accessing vssvc.exe which can be used to facilitate shadow copy-based credential theft."
+    },
+    {
+     "event": 6868,
+     "window": "benign_bw",
+     "reason": "The source process lsass.exe is accessing vssvc.exe which can be used to facilitate shadow copy-based credential theft."
+    },
+    {
+     "event": 6869,
+     "window": "benign_bw",
+     "reason": "The source process lsass.exe is accessing vssvc.exe which can be used to facilitate shadow copy-based credential theft."
+    },
+    {
+     "event": 6870,
+     "window": "benign_bw",
+     "reason": "The source process lsass.exe is accessing vssvc.exe which can be used to facilitate shadow copy-based credential theft."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "final_gemma",
+   "dataset": "win_psremoting",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_gemma/win_psremoting",
+   "classes": {
+    "benign_bw": 33,
+    "excluded": 18,
+    "attack": 98,
+    "benign_aw": 1
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "attack": 29,
+      "normal": 69
+     },
+     "benign_aw": {
+      "no_verdict": 1
+     },
+     "benign_bw": {
+      "normal": 28,
+      "no_verdict": 4,
+      "attack": 1
+     },
+     "excluded": {
+      "attack": 14,
+      "no_verdict": 1,
+      "normal": 3
+     }
+    },
+    "recall": 0.296,
+    "fp_rate": 0.029,
+    "fp_rate_attack_windows": 0.0,
+    "fp_rate_benign_windows": 0.03,
+    "no_verdict": 6,
+    "attack_unbound": 15,
+    "recall_unbound": 5,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 29,
+      "normal": 69
+     },
+     "benign_aw": {
+      "no_verdict": 1
+     },
+     "benign_bw": {
+      "normal": 28,
+      "no_verdict": 4,
+      "attack": 1
+     },
+     "excluded": {
+      "attack": 14,
+      "no_verdict": 1,
+      "normal": 3
+     }
+    },
+    "recall": 0.296,
+    "fp_rate": 0.029,
+    "fp_rate_attack_windows": 0.0,
+    "fp_rate_benign_windows": 0.03,
+    "no_verdict": 6,
+    "attack_unbound": 15,
+    "recall_unbound": 5,
+    "fp_unbound": 0
+   },
+   "requests": 88,
+   "gen_seconds": 5475,
+   "finish": {
+    "stop": 88
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 79,
+   "max_prompt_tokens": 9858,
+   "techniques": {
+    "truth": [
+     "T1021.006"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1021.006"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null
+   },
+   "missed_attack": [
+    {
+     "event": 809,
+     "verdict": "normal",
+     "reason": "The process wsmprovhost.exe is accessing a standard .NET registry key."
+    },
+    {
+     "event": 810,
+     "verdict": "normal",
+     "reason": "The EventID 4658 indicates a handle to an object was closed, which is a routine operation for the process C:\\Windows\\System32\\wsmprovhost.exe started by the use"
+    },
+    {
+     "event": 1234,
+     "verdict": "normal",
+     "reason": "The event shows a legitimate system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1236,
+     "verdict": "normal",
+     "reason": "The event shows a legitimate system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1237,
+     "verdict": "normal",
+     "reason": "The event shows a legitimate system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1240,
+     "verdict": "normal",
+     "reason": "The line shows a standard system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1241,
+     "verdict": "normal",
+     "reason": "The line shows a standard system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1246,
+     "verdict": "normal",
+     "reason": "The line shows a standard system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1248,
+     "verdict": "normal",
+     "reason": "The line shows a Windows Defender component being loaded by wsmprovhost.exe."
+    },
+    {
+     "event": 1250,
+     "verdict": "normal",
+     "reason": "The line shows a standard system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1252,
+     "verdict": "normal",
+     "reason": "The line shows a standard system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1253,
+     "verdict": "normal",
+     "reason": "The line shows a standard system DLL being loaded by conhost.exe."
+    },
+    {
+     "event": 1255,
+     "verdict": "normal",
+     "reason": "This is a standard DLL load for a system process."
+    },
+    {
+     "event": 1258,
+     "verdict": "normal",
+     "reason": "This is a standard DLL load for a system process."
+    },
+    {
+     "event": 1260,
+     "verdict": "normal",
+     "reason": "This is a standard DLL load for a system process."
+    },
+    {
+     "event": 1262,
+     "verdict": "normal",
+     "reason": "This is a standard DLL load for a system process."
+    },
+    {
+     "event": 1263,
+     "verdict": "normal",
+     "reason": "This is a standard DLL load for a system process."
+    },
+    {
+     "event": 1265,
+     "verdict": "normal",
+     "reason": "Image loading cryptsp.dll via conhost.exe is standard behavior."
+    },
+    {
+     "event": 1268,
+     "verdict": "normal",
+     "reason": "The event shows a standard system process (conhost.exe) loading a system DLL (user32.dll) under the SYSTEM account."
+    },
+    {
+     "event": 1270,
+     "verdict": "normal",
+     "reason": "This is a standard DLL load for a system process."
+    },
+    {
+     "event": 1271,
+     "verdict": "normal",
+     "reason": "Image loading gdi32.dll via conhost.exe is standard behavior."
+    },
+    {
+     "event": 1275,
+     "verdict": "normal",
+     "reason": "Image loading gdi32full.dll via conhost.exe is standard behavior."
+    },
+    {
+     "event": 1399,
+     "verdict": "normal",
+     "reason": "The target object is in the HKU user hive for policy configuration."
+    },
+    {
+     "event": 1401,
+     "verdict": "normal",
+     "reason": "The target object is in the HKU user hive for policy configuration."
+    },
+    {
+     "event": 1403,
+     "verdict": "normal",
+     "reason": "The target object is in the HKU user hive for policy configuration."
+    },
+    {
+     "event": 1405,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1407,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1409,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1411,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1413,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1415,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1418,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1422,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1423,
+     "verdict": "normal",
+     "reason": "The event shows registry access to system certificate structures."
+    },
+    {
+     "event": 1426,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1428,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1430,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1432,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1434,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1435,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1437,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1563,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1564,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1565,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1566,
+     "verdict": "normal",
+     "reason": "The event shows routine registry access by a system process."
+    },
+    {
+     "event": 1580,
+     "verdict": "normal",
+     "reason": "Registry object access by powershell.exe (ExecutionProcessID=3392) is standard behavior."
+    },
+    {
+     "event": 1581,
+     "verdict": "normal",
+     "reason": "Registry object access by powershell.exe (ExecutionProcessID=3392) is standard behavior."
+    },
+    {
+     "event": 1582,
+     "verdict": "normal",
+     "reason": "Registry object access by powershell.exe (ExecutionProcessID=3392) is standard behavior."
+    },
+    {
+     "event": 1583,
+     "verdict": "normal",
+     "reason": "The loading of gpapi.dll by powershell.exe is standard system behavior."
+    },
+    {
+     "event": 1585,
+     "verdict": "normal",
+     "reason": "The loading of amsi.dll by powershell.exe is standard system behavior."
+    },
+    {
+     "event": 1640,
+     "verdict": "normal",
+     "reason": "The loading of userenv.dll by powershell.exe is standard system behavior."
+    },
+    {
+     "event": 1652,
+     "verdict": "normal",
+     "reason": "The image is a standard PowerShell executable being loaded by a system process."
+    },
+    {
+     "event": 1654,
+     "verdict": "normal",
+     "reason": "The registry target is a standard path for software publishing trust providers."
+    },
+    {
+     "event": 1655,
+     "verdict": "normal",
+     "reason": "The registry target is a standard path for certificate management."
+    },
+    {
+     "event": 1656,
+     "verdict": "normal",
+     "reason": "The registry target is a standard path for certificate management."
+    },
+    {
+     "event": 1657,
+     "verdict": "normal",
+     "reason": "The registry target is a standard path for certificate management."
+    },
+    {
+     "event": 1658,
+     "verdict": "normal",
+     "reason": "The registry target is a standard path for certificate management."
+    },
+    {
+     "event": 1659,
+     "verdict": "normal",
+     "reason": "The registry target is a standard path for certificate management."
+    },
+    {
+     "event": 1660,
+     "verdict": "normal",
+     "reason": "The event shows registry key access in a user-specific hive by wsmprovhost.exe."
+    },
+    {
+     "event": 1661,
+     "verdict": "normal",
+     "reason": "The event shows registry key access in a user-specific hive by wsmprovhost.exe."
+    },
+    {
+     "event": 1662,
+     "verdict": "normal",
+     "reason": "The event shows registry key access in a user-specific hive by wsmprovhost.exe."
+    },
+    {
+     "event": 1663,
+     "verdict": "normal",
+     "reason": "The event shows registry key access in a user-specific hive by wsmprovhost.exe."
+    },
+    {
+     "event": 1664,
+     "verdict": "normal",
+     "reason": "The event shows registry key access by wsmprovhost.exe."
+    },
+    {
+     "event": 1665,
+     "verdict": "normal",
+     "reason": "The event shows registry key access by wsmprovhost.exe."
+    },
+    {
+     "event": 1666,
+     "verdict": "normal",
+     "reason": "The event shows registry key key access by wsmprovhost.exe."
+    },
+    {
+     "event": 1667,
+     "verdict": "normal",
+     "reason": "The event shows registry key access by wsmprovhost.exe."
+    },
+    {
+     "event": 1668,
+     "verdict": "normal",
+     "reason": "The event shows registry key access by wsmprovhost.exe."
+    },
+    {
+     "event": 1778,
+     "verdict": "normal",
+     "reason": "The DLL is a standard PowerShell utility component loaded by wsmprovhost.exe."
+    },
+    {
+     "event": 1780,
+     "verdict": "normal",
+     "reason": "The DLL is a standard .NET component loaded by wsmprovhost.exe."
+    }
+   ],
+   "false_positives": [
+    {
+     "event": 479,
+     "window": "benign_bw",
+     "reason": "The connection is inbound to port 5985 (WinRM) from an external source."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "final_gemma",
+   "dataset": "win_remote_schtask",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_gemma/win_remote_schtask",
+   "classes": {
+    "benign_bw": 50,
+    "benign_aw": 27,
+    "excluded": 10,
+    "attack": 63
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 30,
+      "attack": 33
+     },
+     "benign_aw": {
+      "attack": 2,
+      "normal": 24,
+      "no_verdict": 1
+     },
+     "benign_bw": {
+      "normal": 44,
+      "attack": 6
+     },
+     "excluded": {
+      "attack": 2,
+      "normal": 7,
+      "no_verdict": 1
+     }
+    },
+    "recall": 0.524,
+    "fp_rate": 0.104,
+    "fp_rate_attack_windows": 0.074,
+    "fp_rate_benign_windows": 0.12,
+    "no_verdict": 2,
+    "attack_unbound": 6,
+    "recall_unbound": 3,
+    "fp_unbound": 3
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 57,
+      "normal": 6
+     },
+     "benign_aw": {
+      "attack": 13,
+      "normal": 13,
+      "no_verdict": 1
+     },
+     "benign_bw": {
+      "attack": 19,
+      "normal": 31
+     },
+     "excluded": {
+      "attack": 6,
+      "normal": 3,
+      "no_verdict": 1
+     }
+    },
+    "recall": 0.905,
+    "fp_rate": 0.416,
+    "fp_rate_attack_windows": 0.481,
+    "fp_rate_benign_windows": 0.38,
+    "no_verdict": 2,
+    "attack_unbound": 11,
+    "recall_unbound": 4,
+    "fp_unbound": 7
+   },
+   "requests": 106,
+   "gen_seconds": 4256,
+   "finish": {
+    "stop": 106
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 88,
+   "max_prompt_tokens": 8033,
+   "techniques": {
+    "truth": [
+     "T1053.005"
+    ],
+    "concluded": [
+     "T1053.005"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": 1.0,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1053.005"
+    ],
+    "concluded": [
+     "T1053"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 1,
+    "evidence_recall": null
+   },
+   "missed_attack": [
+    {
+     "event": 894,
+     "verdict": "normal",
+     "reason": "The registry key creation belongs to a standard Windows Software Protection Platform task."
+    },
+    {
+     "event": 895,
+     "verdict": "normal",
+     "reason": "Setting a value on a task-related registry key is standard behavior."
+    },
+    {
+     "event": 896,
+     "verdict": "normal",
+     "reason": "Setting an ID value for a task cache entry is standard behavior."
+    },
+    {
+     "event": 897,
+     "verdict": "normal",
+     "reason": "Setting an index value for a task cache entry is standard behavior."
+    },
+    {
+     "event": 899,
+     "verdict": "normal",
+     "reason": "The Task Path matches a legitimate Windows service component."
+    },
+    {
+     "event": 908,
+     "verdict": "normal",
+     "reason": "The file creation matches the task path being manipulated in the registry."
+    }
+   ],
+   "false_positives": [
+    {
+     "event": 11,
+     "window": "benign_bw",
+     "reason": "A handle duplication attempt between process 0x9fc and system process 0x4 suggests credential access via LSASS manipulation."
+    },
+    {
+     "event": 12,
+     "window": "benign_bw",
+     "reason": "The handle being closed (0x3fc0) matches the target handle created in the duplication event in L1."
+    },
+    {
+     "event": 13,
+     "window": "benign_bw",
+     "reason": "The process 0x9fc is requesting access to the LSASS process."
+    },
+    {
+     "event": 14,
+     "window": "benign_bw",
+     "reason": "The handle being closed (0xe68) matches the source handle used in the duplication event in L1."
+    },
+    {
+     "event": 160,
+     "window": "benign_bw",
+     "reason": "The target process Wireshark.exe is being accessed by the same source process as the malicious activity."
+    },
+    {
+     "event": 161,
+     "window": "benign_bw",
+     "reason": "The process interaction with Wireshark matches the attacker-identified process-to-process communication pattern."
+    },
+    {
+     "event": 162,
+     "window": "benign_bw",
+     "reason": "The interaction with the Wireshark process matches the attacker-identified process-to-process communication pattern."
+    },
+    {
+     "event": 163,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings in the UserAssist registry key."
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings in the UserAssist registry key."
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "The interaction between Explorer.EXE and Wireshark matches the attack pattern."
+    },
+    {
+     "event": 166,
+     "window": "benign_bw",
+     "reason": "The interaction between Explorer.EXE and Wireshark matches the attack pattern."
+    },
+    {
+     "event": 168,
+     "window": "benign_bw",
+     "reason": "The interaction between Explorer.EXE and Wireshark matches the attack pattern."
+    },
+    {
+     "event": 169,
+     "window": "benign_bw",
+     "reason": "The interaction between Explorer.EXE and Wireshark matches the attack pattern."
+    },
+    {
+     "event": 170,
+     "window": "benign_bw",
+     "reason": "The target process Wireshark.exe is being interacted with by Explorer.EXE, which matches the pattern of the provided attack context."
+    },
+    {
+     "event": 171,
+     "window": "benign_bw",
+     "reason": "The process interaction between svchost.exe (5884) and Explorer.EXE (2724) matches the process IDs involved in the identified malicious registry modifications a"
+    },
+    {
+     "event": 172,
+     "window": "benign_bw",
+     "reason": "The interaction between svchost.exe and Explorer.EXE matches the timing and pattern of the malicious process activity seen in the attack lines."
+    },
+    {
+     "event": 173,
+     "window": "benign_bw",
+     "reason": "Source process 932 is interacting with target process 8140, which matches the pattern of other process interactions in the attack sequence."
+    },
+    {
+     "event": 394,
+     "window": "benign_bw",
+     "reason": "The target process is cscript.exe, which matches the pattern of task scheduling/script execution seen in the attack context."
+    },
+    {
+     "event": 395,
+     "window": "benign_bw",
+     "reason": "The target process is cscript.exe, which is part of the sequence of process execution seen in the attack lines."
+    },
+    {
+     "event": 457,
+     "window": "benign_aw",
+     "reason": "Registry modification to UserAssist with a suspicious name HRZR_PGYFRFFVBA."
+    },
+    {
+     "event": 458,
+     "window": "benign_aw",
+     "reason": "The TargetImage is Wireshark.exe and the source is Explorer.EXE, matching the context of the process activities."
+    },
+    {
+     "event": 459,
+     "window": "benign_aw",
+     "reason": "The source process 932 (svchost.exe) is seen spawning/interacting with target process 3036 (conhost.exe) which is then used to launch cmd.exe (A2)."
+    },
+    {
+     "event": 462,
+     "window": "benign_aw",
+     "reason": "The source process svchost.exe (5884) is interacting with the same process (2724) that was performing malicious registry writes via Explorer.EXE."
+    },
+    {
+     "event": 463,
+     "window": "benign_aw",
+     "reason": "The SourceProcessId 5884 is the process being investigated and the TargetProcessId 2724 is identified as malicious in the context."
+    },
+    {
+     "event": 464,
+     "window": "benign_aw",
+     "reason": "This is a duplicate of the interaction between source 932 and target 8140 observed in the attack sequence."
+    },
+    {
+     "event": 528,
+     "window": "benign_aw",
+     "reason": "This is a duplicate of the interaction between source 932 and target 8140 observed in the attack sequence."
+    },
+    {
+     "event": 580,
+     "window": "benign_aw",
+     "reason": "The command line execution of a VBScript via cscript.exe is suspicious."
+    },
+    {
+     "event": 581,
+     "window": "benign_aw",
+     "reason": "The process creation of conhost.exe by cscript.exe is a result of the script execution."
+    },
+    {
+     "event": 910,
+     "window": "benign_aw",
+     "reason": "The command line matches the malicious process identified in A1."
+    },
+    {
+     "event": 911,
+     "window": "benign_aw",
+     "reason": "The event shows process 524 (csrss.exe) accessing the process cscript.exe (PID 776) which was identified as part of an attack."
+    },
+    {
+     "event": 912,
+     "window": "benign_aw",
+     "reason": "This event tracks the execution of the malicious script host process."
+    },
+    {
+     "event": 913,
+     "window": "benign_aw",
+     "reason": "The loading of ntdll.dll by cscript.exe is a step in the execution of the script."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "final_gemma",
+   "dataset": "win_uac_fodhelper",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/final_gemma/win_uac_fodhelper",
+   "classes": {
+    "attack": 72,
+    "excluded": 12,
+    "benign_aw": 17,
+    "benign_bw": 49
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "attack": 68,
+      "normal": 2,
+      "no_verdict": 2
+     },
+     "benign_aw": {
+      "normal": 10,
+      "no_verdict": 7
+     },
+     "benign_bw": {
+      "normal": 42,
+      "no_verdict": 6,
+      "attack": 1
+     },
+     "excluded": {
+      "attack": 12
+     }
+    },
+    "recall": 0.944,
+    "fp_rate": 0.015,
+    "fp_rate_attack_windows": 0.0,
+    "fp_rate_benign_windows": 0.02,
+    "no_verdict": 15,
+    "attack_unbound": 17,
+    "recall_unbound": 14,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 69,
+      "normal": 1,
+      "no_verdict": 2
+     },
+     "benign_aw": {
+      "normal": 10,
+      "no_verdict": 7
+     },
+     "benign_bw": {
+      "normal": 42,
+      "no_verdict": 6,
+      "attack": 1
+     },
+     "excluded": {
+      "attack": 12
+     }
+    },
+    "recall": 0.958,
+    "fp_rate": 0.015,
+    "fp_rate_attack_windows": 0.0,
+    "fp_rate_benign_windows": 0.02,
+    "no_verdict": 15,
+    "attack_unbound": 17,
+    "recall_unbound": 14,
+    "fp_unbound": 0
+   },
+   "requests": 148,
+   "gen_seconds": 17088,
+   "finish": {
+    "stop": 148
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 115,
+   "max_prompt_tokens": 12156,
+   "techniques": {
+    "truth": [
+     "T1548.002"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1548.002"
+    ],
+    "concluded": [],
+    "exact": false,
+    "parent": false,
+    "extra": 0,
+    "evidence_recall": null
+   },
+   "missed_attack": [
+    {
+     "event": 1529,
+     "verdict": "normal",
+     "reason": "The event shows a PowerShell console startup for user pgustavo with EventID 40961."
+    },
+    {
+     "event": 2113,
+     "verdict": "no_verdict",
+     "reason": ""
+    },
+    {
+     "event": 3183,
+     "verdict": "no_verdict",
+     "reason": ""
+    }
+   ],
+   "false_positives": [
+    {
+     "event": 3186,
+     "window": "benign_bw",
+     "reason": "The loading of urlmon.dll by LogonUI.exe is an unusual behavior for a system login process."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "fsec",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/fsec/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 28,
+      "attack": 57,
+      "no_verdict": 2
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 40,
+      "normal": 53
+     },
+     "excluded": {
+      "normal": 2,
+      "attack": 2
+     }
+    },
+    "recall": 0.655,
+    "fp_rate": 0.43,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.43,
+    "no_verdict": 2,
+    "attack_unbound": 11,
+    "recall_unbound": 6,
+    "fp_unbound": 5
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 77,
+      "normal": 8,
+      "no_verdict": 2
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 84,
+      "normal": 9
+     },
+     "excluded": {
+      "attack": 4
+     }
+    },
+    "recall": 0.885,
+    "fp_rate": 0.903,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.903,
+    "no_verdict": 2,
+    "attack_unbound": 25,
+    "recall_unbound": 14,
+    "fp_unbound": 11
+   },
+   "requests": 103,
+   "gen_seconds": 12296,
+   "finish": {
+    "stop": 101,
+    "length": 2
+   },
+   "hit_limit": 2,
+   "rejected_quotes": 169,
+   "max_prompt_tokens": 10370,
+   "techniques": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003.001",
+     "T1055.012",
+     "T1059",
+     "T1059.001",
+     "T1070.003",
+     "T1112",
+     "T1218.011",
+     "T1546.008"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 7,
+    "evidence_recall": 1.0,
+    "rejected": 5,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003",
+     "T1055",
+     "T1059",
+     "T1068",
+     "T1070",
+     "T1083",
+     "T1112",
+     "T1218",
+     "T1546",
+     "T1685"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 10,
+    "evidence_recall": null
+   },
+   "missed_attack": [
+    {
+     "event": 19,
+     "verdict": "normal",
+     "reason": "Safe key access."
+    },
+    {
+     "event": 20,
+     "verdict": "normal",
+     "reason": "Expected registry interaction."
+    },
+    {
+     "event": 21,
+     "verdict": "normal",
+     "reason": "Routine handle closure."
+    },
+    {
+     "event": 22,
+     "verdict": "normal",
+     "reason": "Standard handle duplication."
+    },
+    {
+     "event": 24,
+     "verdict": "normal",
+     "reason": "Legitimate query of environment variable key."
+    },
+    {
+     "event": 25,
+     "verdict": "normal",
+     "reason": "Standard registry access for session manager environment."
+    },
+    {
+     "event": 26,
+     "verdict": "normal",
+     "reason": "Routine handle cleanup."
+    },
+    {
+     "event": 27,
+     "verdict": "normal",
+     "reason": "Standard handle duplication."
+    },
+    {
+     "event": 97,
+     "verdict": "no_verdict",
+     "reason": ""
+    },
+    {
+     "event": 103,
+     "verdict": "no_verdict",
+     "reason": ""
+    }
+   ],
+   "false_positives": [
+    {
+     "event": 30,
+     "window": "benign_bw",
+     "reason": "Outbound connection to Azure public IP on port 80 by waappagent.exe suggests possible unauthorized cloud communication."
+    },
+    {
+     "event": 32,
+     "window": "benign_bw",
+     "reason": "Abrupt exit of SYSTEM-level process (WORKSTATION5$) suggests compromise"
+    },
+    {
+     "event": 36,
+     "window": "benign_bw",
+     "reason": "Audit log cleared (EventID=1102) suggests malicious activity to erase evidence."
+    },
+    {
+     "event": 37,
+     "window": "benign_bw",
+     "reason": "Suspicious direct launch of security software by explorer.exe without apparent user interaction"
+    },
+    {
+     "event": 38,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe launch from explorer.exe"
+    },
+    {
+     "event": 39,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe launch from explorer.exe"
+    },
+    {
+     "event": 40,
+     "window": "benign_bw",
+     "reason": "ACCESS_TYPE=0x1000 PROCESS_DUP_HANDLE between svchost instances"
+    },
+    {
+     "event": 41,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 42,
+     "window": "benign_bw",
+     "reason": "Suspicious registry modification for UserAssist tracking"
+    },
+    {
+     "event": 43,
+     "window": "benign_bw",
+     "reason": "Suspicious registry modification for UserAssist tracking"
+    },
+    {
+     "event": 44,
+     "window": "benign_bw",
+     "reason": "Registry modification consistent with UserAssist abuse"
+    },
+    {
+     "event": 45,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 46,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 47,
+     "window": "benign_bw",
+     "reason": "Registry modification consistent with UserAssist abuse"
+    },
+    {
+     "event": 48,
+     "window": "benign_bw",
+     "reason": "Repeated InputApp.exe interaction, possibly malicious."
+    },
+    {
+     "event": 49,
+     "window": "benign_bw",
+     "reason": "Execution of powershell.exe initiated via InputApp.exe"
+    },
+    {
+     "event": 50,
+     "window": "benign_bw",
+     "reason": "Access to InputApp.exe, targeted after suspicious registry modifications and explorer.exe spawning rundll32.exe"
+    },
+    {
+     "event": 51,
+     "window": "benign_bw",
+     "reason": "Multiple PowerShell executions, core to the attack chain."
+    },
+    {
+     "event": 52,
+     "window": "benign_bw",
+     "reason": "Another PowerShell invocation, directly tied to the initial attack pattern."
+    },
+    {
+     "event": 53,
+     "window": "benign_bw",
+     "reason": "Suspicious UserAssist registry modification"
+    },
+    {
+     "event": 54,
+     "window": "benign_bw",
+     "reason": "Suspicious UserAssist registry modification"
+    },
+    {
+     "event": 55,
+     "window": "benign_bw",
+     "reason": "PowerShell execution with suspicious context (UserAssist modification)"
+    },
+    {
+     "event": 56,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe launch from explorer.exe"
+    },
+    {
+     "event": 57,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe launch from explorer.exe"
+    },
+    {
+     "event": 58,
+     "window": "benign_bw",
+     "reason": "Svchost spawning Conhost is uncommon."
+    },
+    {
+     "event": 59,
+     "window": "benign_bw",
+     "reason": "Unusual conhost.exe launch from explorer.exe"
+    },
+    {
+     "event": 60,
+     "window": "benign_bw",
+     "reason": "Unusual conhost.exe launch from explorer.exe"
+    },
+    {
+     "event": 61,
+     "window": "benign_bw",
+     "reason": "Unusual conhost.exe launch from explorer.exe"
+    },
+    {
+     "event": 62,
+     "window": "benign_bw",
+     "reason": "Unusual conhost.exe launch from explorer.exe"
+    },
+    {
+     "event": 66,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 67,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 70,
+     "window": "benign_bw",
+     "reason": "Repetitive suspicious PROCESS_VM_READ access to MsMpEng.exe using same lsm.dll addresses"
+    },
+    {
+     "event": 71,
+     "window": "benign_bw",
+     "reason": "Suspicious PROCESS_VM_READ access to MsMpEng.exe using lsm.dll addresses 1184f and 1172e"
+    },
+    {
+     "event": 132,
+     "window": "benign_bw",
+     "reason": "Registry key modification at the same path and time as previous attack-related events."
+    },
+    {
+     "event": 133,
+     "window": "benign_bw",
+     "reason": "Registry modification occurs concurrently with suspicious process creations"
+    },
+    {
+     "event": 134,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 135,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 136,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 137,
+     "window": "benign_bw",
+     "reason": "Self-spawning Svchost is suspicious."
+    },
+    {
+     "event": 138,
+     "window": "benign_bw",
+     "reason": "Spawns Raccine.exe, an anti-malware tool potentially disabled by attackers."
+    },
+    {
+     "event": 139,
+     "window": "benign_bw",
+     "reason": "Repeated PowerShell execution, matching initial attack indicator."
+    },
+    {
+     "event": 140,
+     "window": "benign_bw",
+     "reason": "Continued spawning of Raccine.exe, likely part of defense evasion."
+    },
+    {
+     "event": 141,
+     "window": "benign_bw",
+     "reason": "Further interaction with Raccine.exe, reinforcing malicious intent."
+    },
+    {
+     "event": 142,
+     "window": "benign_bw",
+     "reason": "Repeated conhost.exe call, integral to the attack process."
+    },
+    {
+     "event": 143,
+     "window": "benign_bw",
+     "reason": "Interaction with InputApp.exe, possibly exploited for lateral movement."
+    },
+    {
+     "event": 144,
+     "window": "benign_bw",
+     "reason": "Svchost spawning Conhost is uncommon."
+    },
+    {
+     "event": 145,
+     "window": "benign_bw",
+     "reason": "Consecutive EventID=10 accesses targeting Raccine.exe, likely part of automated interference"
+    },
+    {
+     "event": 146,
+     "window": "benign_bw",
+     "reason": "Same as L8, maintaining the attack pattern"
+    },
+    {
+     "event": 148,
+     "window": "benign_bw",
+     "reason": "Calls conhost.exe, which was part of the attack chain."
+    },
+    {
+     "event": 149,
+     "window": "benign_bw",
+     "reason": "Repeats calling conhost.exe, suggesting continuation of attack-related activities."
+    },
+    {
+     "event": 150,
+     "window": "benign_bw",
+     "reason": "Another call to conhost.exe, consistent with ongoing malicious actions."
+    },
+    {
+     "event": 151,
+     "window": "benign_bw",
+     "reason": "Continues interaction with conhost.exe, indicating active attack involvement."
+    },
+    {
+     "event": 152,
+     "window": "benign_bw",
+     "reason": "Registry modification targeting PowerShell execution path"
+    },
+    {
+     "event": 153,
+     "window": "benign_bw",
+     "reason": "Creation of AppSwitched feature registry key"
+    },
+    {
+     "event": 154,
+     "window": "benign_bw",
+     "reason": "Unusual registry modification under ActivityDataModel, possibly for covert tracking"
+    },
+    {
+     "event": 155,
+     "window": "benign_bw",
+     "reason": "Consistent with L6, reinforcing the attack context"
+    },
+    {
+     "event": 156,
+     "window": "benign_bw",
+     "reason": "Modification of UserAssist keys, a common persistence mechanism"
+    },
+    {
+     "event": 157,
+     "window": "benign_bw",
+     "reason": "Same as L4, reinforcing the malicious nature of these writes"
+    },
+    {
+     "event": 158,
+     "window": "benign_bw",
+     "reason": "High frequency of identical EventID=10 targeting Raccine.exe"
+    },
+    {
+     "event": 159,
+     "window": "benign_bw",
+     "reason": "Targets PowerShell, which was involved in the initial attack."
+    },
+    {
+     "event": 160,
+     "window": "benign_bw",
+     "reason": "Targets another application, possibly related to the attack flow."
+    },
+    {
+     "event": 162,
+     "window": "benign_bw",
+     "reason": "ACCESS_TYPE=0x2000 PROCESS_VM_READ to Explorer.EXE"
+    },
+    {
+     "event": 163,
+     "window": "benign_bw",
+     "reason": "Registry modification in notifications path; potential persistence mechanism"
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "Registry modification under HKEY_LOCAL_MACHINE can indicate malicious activity."
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "Registry key creation at HKLM\\\\SOFTWARE\\\\Microsoft\\\\Windows\\\\CurrentVersion\\\\VFUProvider is unauthorized modification"
+    },
+    {
+     "event": 166,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 167,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 168,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 169,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 170,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 171,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 172,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 173,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 174,
+     "window": "benign_bw",
+     "reason": "Detailed call trace points to complex system interactions possibly indicative of malicious activity."
+    },
+    {
+     "event": 175,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 176,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 177,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 178,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 179,
+     "window": "benign_bw",
+     "reason": "Termination of SearchFilterHost.exe, a system process, indicates malicious activity"
+    },
+    {
+     "event": 180,
+     "window": "benign_bw",
+     "reason": "Registry modification under Notifications path suggests unauthorized configuration changes."
+    },
+    {
+     "event": 181,
+     "window": "benign_bw",
+     "reason": "Unusual registry path modification indicates potential tampering."
+    },
+    {
+     "event": 182,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 183,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    },
+    {
+     "event": 184,
+     "window": "benign_bw",
+     "reason": "Same process and image as attack lines"
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "fsec_after",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/fsec_after/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 34,
+      "attack": 51,
+      "no_verdict": 2
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 54,
+      "normal": 39
+     },
+     "excluded": {
+      "normal": 3,
+      "attack": 1
+     }
+    },
+    "recall": 0.586,
+    "fp_rate": 0.581,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.581,
+    "no_verdict": 2,
+    "attack_unbound": 14,
+    "recall_unbound": 4,
+    "fp_unbound": 10
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 83,
+      "normal": 2,
+      "no_verdict": 2
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 60,
+      "normal": 33
+     },
+     "excluded": {
+      "attack": 4
+     }
+    },
+    "recall": 0.954,
+    "fp_rate": 0.645,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.645,
+    "no_verdict": 2,
+    "attack_unbound": 30,
+    "recall_unbound": 18,
+    "fp_unbound": 11
+   },
+   "requests": 105,
+   "gen_seconds": 10371,
+   "finish": {
+    "stop": 105
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 173,
+   "max_prompt_tokens": 10010,
+   "techniques": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003.001",
+     "T1021.001",
+     "T1027",
+     "T1059",
+     "T1059.001",
+     "T1059.003",
+     "T1070.003",
+     "T1074.001",
+     "T1082",
+     "T1083",
+     "T1087.001",
+     "T1112",
+     "T1218.011",
+     "T1546.008",
+     "T1555.001",
+     "T1685"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 15,
+    "evidence_recall": 1.0,
+    "rejected": 4,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003",
+     "T1018",
+     "T1021",
+     "T1027",
+     "T1059",
+     "T1070",
+     "T1074",
+     "T1082",
+     "T1083",
+     "T1087",
+     "T1112",
+     "T1218",
+     "T1546",
+     "T1555",
+     "T1685"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 15,
+    "evidence_recall": null
+   },
+   "missed_attack": [
+    {
+     "event": 21,
+     "verdict": "normal",
+     "reason": "Normal handle closure."
+    },
+    {
+     "event": 26,
+     "verdict": "normal",
+     "reason": "Normal handle closure."
+    },
+    {
+     "event": 84,
+     "verdict": "no_verdict",
+     "reason": ""
+    },
+    {
+     "event": 90,
+     "verdict": "no_verdict",
+     "reason": ""
+    }
+   ],
+   "false_positives": [
+    {
+     "event": 28,
+     "window": "benign_bw",
+     "reason": "Same process and destination as previous attack event."
+    },
+    {
+     "event": 29,
+     "window": "benign_bw",
+     "reason": "Different source port than observed in previous legitimate binds"
+    },
+    {
+     "event": 34,
+     "window": "benign_bw",
+     "reason": "Outbound connection from guest agent process may indicate unauthorized activity."
+    },
+    {
+     "event": 35,
+     "window": "benign_bw",
+     "reason": "Guest agent process binding to a local port may indicate malicious communication or persistence."
+    },
+    {
+     "event": 36,
+     "window": "benign_bw",
+     "reason": "Unclear context prevents confirming legitimacy; may indicate malicious activity."
+    },
+    {
+     "event": 37,
+     "window": "benign_bw",
+     "reason": "Security tool access"
+    },
+    {
+     "event": 38,
+     "window": "benign_bw",
+     "reason": "Close timestamp to prior malicious events implies continuity."
+    },
+    {
+     "event": 39,
+     "window": "benign_bw",
+     "reason": "Suspicious system app access"
+    },
+    {
+     "event": 42,
+     "window": "benign_bw",
+     "reason": "Suspicious manipulation of UserAssist registry"
+    },
+    {
+     "event": 43,
+     "window": "benign_bw",
+     "reason": "Suspicious manipulation of UserAssist registry"
+    },
+    {
+     "event": 44,
+     "window": "benign_bw",
+     "reason": "Manipulation of UserAssist registry key"
+    },
+    {
+     "event": 47,
+     "window": "benign_bw",
+     "reason": "Manipulation of UserAssist registry key"
+    },
+    {
+     "event": 48,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 49,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 50,
+     "window": "benign_bw",
+     "reason": "Suspicious InputApp.exe spawning from explorer.exe"
+    },
+    {
+     "event": 51,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 52,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 53,
+     "window": "benign_bw",
+     "reason": "Repetition of suspicious UserAssist registry modification"
+    },
+    {
+     "event": 54,
+     "window": "benign_bw",
+     "reason": "Repetition of suspicious registry artifact"
+    },
+    {
+     "event": 55,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 56,
+     "window": "benign_bw",
+     "reason": "Different source thread ID compared to normal events indicates a distinct execution path."
+    },
+    {
+     "event": 57,
+     "window": "benign_bw",
+     "reason": "Unusual DLL involvement suggests evasion attempts."
+    },
+    {
+     "event": 58,
+     "window": "benign_bw",
+     "reason": "Spawn of conhost.exe, often abused in attacks for command execution."
+    },
+    {
+     "event": 59,
+     "window": "benign_bw",
+     "reason": "Suspicious process spawned by explorer"
+    },
+    {
+     "event": 60,
+     "window": "benign_bw",
+     "reason": "Suspicious process spawned by explorer"
+    },
+    {
+     "event": 61,
+     "window": "benign_bw",
+     "reason": "Suspicious process spawned by explorer"
+    },
+    {
+     "event": 62,
+     "window": "benign_bw",
+     "reason": "Suspicious process spawned by explorer"
+    },
+    {
+     "event": 66,
+     "window": "benign_bw",
+     "reason": "Repetitive access to MsMpEng.exe indicates suspicious behavior"
+    },
+    {
+     "event": 67,
+     "window": "benign_bw",
+     "reason": "Continued suspicious access to MsMpEng.exe warrants investigation"
+    },
+    {
+     "event": 70,
+     "window": "benign_bw",
+     "reason": "Direct access to Microsoft Defender engine by svchost is unusual"
+    },
+    {
+     "event": 71,
+     "window": "benign_bw",
+     "reason": "Repeated access to MsMpEng.exe suggests unauthorized interaction"
+    },
+    {
+     "event": 132,
+     "window": "benign_bw",
+     "reason": "Suspicious registry modification pattern"
+    },
+    {
+     "event": 133,
+     "window": "benign_bw",
+     "reason": "Creation of suspicious registry key"
+    },
+    {
+     "event": 138,
+     "window": "benign_bw",
+     "reason": "Execution of rundll32.exe from explorer.exe"
+    },
+    {
+     "event": 139,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 140,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 141,
+     "window": "benign_bw",
+     "reason": "Suspicious InputApp.exe spawning from explorer.exe"
+    },
+    {
+     "event": 142,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 143,
+     "window": "benign_bw",
+     "reason": "Suspicious powershell.exe spawning from explorer.exe"
+    },
+    {
+     "event": 145,
+     "window": "benign_bw",
+     "reason": "Execution of Raccine.exe from explorer.exe"
+    },
+    {
+     "event": 146,
+     "window": "benign_bw",
+     "reason": "Execution of Raccine.exe from explorer.exe"
+    },
+    {
+     "event": 147,
+     "window": "benign_bw",
+     "reason": "Registry modification under \\Software\\Microsoft\\Input\\Settings suggests potential manipulation of input settings"
+    },
+    {
+     "event": 148,
+     "window": "benign_bw",
+     "reason": "Suspicious conhost.exe spawning from explorer.exe"
+    },
+    {
+     "event": 149,
+     "window": "benign_bw",
+     "reason": "Suspicious conhost.exe spawning from explorer.exe"
+    },
+    {
+     "event": 150,
+     "window": "benign_bw",
+     "reason": "Suspicious conhost.exe spawning from explorer.exe"
+    },
+    {
+     "event": 151,
+     "window": "benign_bw",
+     "reason": "Suspicious conhost.exe spawning from explorer.exe"
+    },
+    {
+     "event": 152,
+     "window": "benign_bw",
+     "reason": "Suspicious FeatureUsage registry modification"
+    },
+    {
+     "event": 153,
+     "window": "benign_bw",
+     "reason": "Creation of suspicious FeatureUsage registry key"
+    },
+    {
+     "event": 154,
+     "window": "benign_bw",
+     "reason": "Modification of ActivityDataModel registry entry"
+    },
+    {
+     "event": 155,
+     "window": "benign_bw",
+     "reason": "Repeated modification of ActivityDataModel registry entry"
+    },
+    {
+     "event": 156,
+     "window": "benign_bw",
+     "reason": "Suspicious modification of UserAssist registry key"
+    },
+    {
+     "event": 157,
+     "window": "benign_bw",
+     "reason": "Suspicious registry path indicating potential malware artifacts"
+    },
+    {
+     "event": 158,
+     "window": "benign_bw",
+     "reason": "Execution of Raccine.exe from explorer.exe"
+    },
+    {
+     "event": 159,
+     "window": "benign_bw",
+     "reason": "Execution of Raccine.exe from explorer.exe"
+    },
+    {
+     "event": 160,
+     "window": "benign_bw",
+     "reason": "Execution of Raccine.exe from explorer.exe"
+    },
+    {
+     "event": 161,
+     "window": "benign_bw",
+     "reason": "Shared EventType and TargetObject match malicious context lines"
+    },
+    {
+     "event": 163,
+     "window": "benign_bw",
+     "reason": "Modification of a system registry key under HKLM is suspicious without legitimate context."
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "Registry SetValue under HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\VFUProvider may indicate unauthorized modification"
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "Creation of registry key under HKLM may indicate malicious activity or persistence mechanism"
+    },
+    {
+     "event": 181,
+     "window": "benign_bw",
+     "reason": "Registry modification involving binary data could indicate malicious activity."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "gemma",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/gemma/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 46,
+      "attack": 41
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 35,
+      "normal": 58
+     },
+     "excluded": {
+      "normal": 3,
+      "attack": 1
+     }
+    },
+    "recall": 0.471,
+    "fp_rate": 0.376,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.376,
+    "no_verdict": 0,
+    "attack_unbound": 1,
+    "recall_unbound": 1,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 87
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 70,
+      "normal": 23
+     },
+     "excluded": {
+      "attack": 4
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.753,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.753,
+    "no_verdict": 0,
+    "attack_unbound": 2,
+    "recall_unbound": 1,
+    "fp_unbound": 1
+   },
+   "requests": 66,
+   "gen_seconds": 3241,
+   "finish": {
+    "stop": 66
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 56,
+   "max_prompt_tokens": 12139,
+   "techniques": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003.001",
+     "T1005",
+     "T1012",
+     "T1016",
+     "T1036.002",
+     "T1055",
+     "T1059.001"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 6,
+    "evidence_recall": 1.0,
+    "rejected": 2,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003",
+     "T1005",
+     "T1012",
+     "T1014",
+     "T1016",
+     "T1036",
+     "T1053",
+     "T1055",
+     "T1059"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 9,
+    "evidence_recall": null
+   },
+   "missed_attack": [],
+   "false_positives": [
+    {
+     "event": 36,
+     "window": "benign_bw",
+     "reason": "The event shows the security audit log was cleared by account warddog (S-1-5-21-3940915590-64593676-1414006259-500) via EventID 1102."
+    },
+    {
+     "event": 37,
+     "window": "benign_bw",
+     "reason": "The target process is an unusual executable name."
+    },
+    {
+     "event": 38,
+     "window": "benign_bw",
+     "reason": "The process Explorer.EXE is interacting with powershell.exe via process access."
+    },
+    {
+     "event": 40,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 41,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 42,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings in the UserAssist registry key."
+    },
+    {
+     "event": 43,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings in the UserAssist registry key."
+    },
+    {
+     "event": 45,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 46,
+     "window": "benign_bw",
+     "reason": "The event shows process 944 accessing process 3252, following the pattern of process access seen in the attack line."
+    },
+    {
+     "event": 48,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccsine.exe via a process access event."
+    },
+    {
+     "event": 49,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing powershell.exe via a process access event."
+    },
+    {
+     "event": 50,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing InputApp.exe via a process access event."
+    },
+    {
+     "event": 51,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing powershell.exe via a process access event."
+    },
+    {
+     "event": 52,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing powershell.exe via a process access event."
+    },
+    {
+     "event": 53,
+     "window": "benign_bw",
+     "reason": "The UserAssist registry path contains an encoded string."
+    },
+    {
+     "event": 54,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated strings in the UserAssist registry key."
+    },
+    {
+     "event": 55,
+     "window": "benign_bw",
+     "reason": "The process Explorer.EXE is interacting with powershell.exe via process access."
+    },
+    {
+     "event": 56,
+     "window": "benign_bw",
+     "reason": "The process Explorer.EXE is interacting with powershell.exe via process access."
+    },
+    {
+     "event": 57,
+     "window": "benign_bw",
+     "reason": "The process Explorer.EXE is interacting with powershell.exe via process access."
+    },
+    {
+     "event": 58,
+     "window": "benign_bw",
+     "reason": "The target process is conhost.exe, which is a common target for process interaction similar to the attack line."
+    },
+    {
+     "event": 59,
+     "window": "benign_bw",
+     "reason": "This event shows process interaction between Explorer.EXE and conhost.exe, similar to the attack pattern in A3-A5."
+    },
+    {
+     "event": 60,
+     "window": "benign_bw",
+     "reason": "This event shows process interaction between Explorer.s and conhost.exe, similar to the attack pattern in A3-A5."
+    },
+    {
+     "event": 61,
+     "window": "benign_bw",
+     "reason": "This event shows process interaction between Explorer.s and conhost.exe, similar to the attack pattern in A3-A5."
+    },
+    {
+     "event": 62,
+     "window": "benign_bw",
+     "reason": "This event shows process interaction between Explorer.s and conhost.exe, similar to the attack pattern in A3-A5."
+    },
+    {
+     "event": 66,
+     "window": "benign_bw",
+     "reason": "The source process 404 is accessing a security process (MsMpEng.exe) via the same mechanism as the attack lines."
+    },
+    {
+     "event": 67,
+     "window": "benign_bw",
+     "reason": "The source process 404 is accessing a security process (MsMpEng.exe) via the same mechanism as the attack lines."
+    },
+    {
+     "event": 70,
+     "window": "benign_bw",
+     "reason": "The source process 404 is accessing a security process (MsMpEng.exe) via the same mechanism as the attack lines."
+    },
+    {
+     "event": 71,
+     "window": "benign_bw",
+     "reason": "The source process 404 is accessing a security process (MsMpEng.exe) via the same mechanism as the attack lines."
+    },
+    {
+     "event": 134,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 135,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 136,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 137,
+     "window": "benign_bw",
+     "reason": "The process is interacting with another svchost.exe, matching the pattern of the attack line."
+    },
+    {
+     "event": 138,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe via a process access event."
+    },
+    {
+     "event": 139,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing powershell.exe via a process access event."
+    },
+    {
+     "event": 140,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe via a process access event."
+    },
+    {
+     "event": 141,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing InputApp.exe via a process access event."
+    },
+    {
+     "event": 142,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe via a process access event."
+    },
+    {
+     "event": 143,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe via a process access event."
+    },
+    {
+     "event": 144,
+     "window": "benign_bw",
+     "reason": "The target process is conhost.exe, which is a common target for process injection/interaction similar to the attack line."
+    },
+    {
+     "event": 145,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe via a process access event."
+    },
+    {
+     "event": 146,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe via a process access event."
+    },
+    {
+     "event": 148,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing conhost.exe via a process access event."
+    },
+    {
+     "event": 149,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing conhost.exe via a process access event."
+    },
+    {
+     "event": 150,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing conhost.exe via a process process access event."
+    },
+    {
+     "event": 151,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing conhost.exe via a process access event."
+    },
+    {
+     "event": 152,
+     "window": "benign_bw",
+     "reason": "The registry path indicates PowerShell was being used via AppSwitched tracking."
+    },
+    {
+     "event": 156,
+     "window": "benign_bw",
+     "reason": "The registry target shows an encoded string in UserAssist which is suspicious."
+    },
+    {
+     "event": 157,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated paths in the UserAssist registry key."
+    },
+    {
+     "event": 158,
+     "window": "benign_bw",
+     "reason": "The target process Raccine.exe is being accessed by Explorer.exe via a process access event."
+    },
+    {
+     "event": 159,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing powershell.exe via a process access event."
+    },
+    {
+     "event": 160,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing InputApp.exe via a process access event."
+    },
+    {
+     "event": 162,
+     "window": "benign_bw",
+     "reason": "The source process 944 is interacting with Explorer.exe (PID 1072), which is the process performing the malicious actions in the attack lines."
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "The creation of a non-standard registry key path VFUProvider suggests persistence or configuration manipulation."
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "The creation of a non-standard registry key under CurrentVersion by svchost.exe is suspicious."
+    },
+    {
+     "event": 166,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing malicious registry actions in the attack context."
+    },
+    {
+     "event": 167,
+     "window": "benign_bw",
+     "reason": "Process 404 is the source and it is interacting with process 3172, which is identified as malicious in the context."
+    },
+    {
+     "event": 168,
+     "window": "benign_bw",
+     "reason": "The target process is a different svchost.exe instance (PID 1040) compared to the attack lines (PID 3172), but it follows the same pattern of access being grant"
+    },
+    {
+     "event": 169,
+     "window": "benign_bw",
+     "reason": "The process with ID 404 is interacting with process 3172, which is performing malicious registry operations."
+    },
+    {
+     "event": 170,
+     "window": "benign_bw",
+     "reason": "The target process is a different svchost.exe instance (PID 1040) compared to the attack lines (PID 3172), but it follows the same pattern of access being grant"
+    },
+    {
+     "event": 171,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the same process ID seen in the malicious activity."
+    },
+    {
+     "event": 172,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 performing process injection (EventID 10) into process 3172, which is the process performing the malicious registry actions."
+    },
+    {
+     "event": 173,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing registry modifications in the attack lines."
+    },
+    {
+     "event": 174,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 performing process injection (EventID 10) into process 3172, which is the process performing the malicious registry actions."
+    },
+    {
+     "event": 175,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing registry modifications in the attack lines."
+    },
+    {
+     "event": 176,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing the malicious registry actions."
+    },
+    {
+     "event": 177,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 performing process injection (EventID 10) into process 3172, which is the process performing the malicious registry activity."
+    },
+    {
+     "event": 178,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing the malicious registry actions."
+    },
+    {
+     "event": 182,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing registry modifications in the attack lines."
+    },
+    {
+     "event": 183,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing malicious registry operations in the attack context."
+    },
+    {
+     "event": 184,
+     "window": "benign_bw",
+     "reason": "The event shows process 404 interacting with process 3172, which is the process performing malicious registry operations in the attack lines."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "gemma_sampled",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/gemma_sampled/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "normal": 43,
+      "attack": 44
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 40,
+      "normal": 52,
+      "no_verdict": 1
+     },
+     "excluded": {
+      "normal": 3,
+      "attack": 1
+     }
+    },
+    "recall": 0.506,
+    "fp_rate": 0.43,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.43,
+    "no_verdict": 1,
+    "attack_unbound": 2,
+    "recall_unbound": 1,
+    "fp_unbound": 1
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 87
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 76,
+      "normal": 16,
+      "no_verdict": 1
+     },
+     "excluded": {
+      "attack": 4
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.817,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.817,
+    "no_verdict": 1,
+    "attack_unbound": 4,
+    "recall_unbound": 1,
+    "fp_unbound": 2
+   },
+   "requests": 56,
+   "gen_seconds": 2874,
+   "finish": {
+    "stop": 56
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 46,
+   "max_prompt_tokens": 12139,
+   "techniques": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003.001",
+     "T1005",
+     "T1012",
+     "T1059.001"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 3,
+    "evidence_recall": 1.0,
+    "rejected": 0,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003",
+     "T1005",
+     "T1012",
+     "T1059"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 4,
+    "evidence_recall": null
+   },
+   "missed_attack": [],
+   "false_positives": [
+    {
+     "event": 36,
+     "window": "benign_bw",
+     "reason": "The event ID 1102 indicates the security log was cleared by user warddog, which is a common technique to hide tracks."
+    },
+    {
+     "event": 37,
+     "window": "benign_bw",
+     "reason": "The TargetImage is an unusual executable name."
+    },
+    {
+     "event": 38,
+     "window": "benign_bw",
+     "reason": "The process interaction involves PowerShell, which matches the encoded suspicious path in L1."
+    },
+    {
+     "event": 39,
+     "window": "benign_bw",
+     "reason": "This shows Explorer.EXE (SourceProcessId 1072) interacting with a target process, matching the pattern seen in the attack lines A2 and A3."
+    },
+    {
+     "event": 40,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 41,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 42,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains ROT13 encoded text 'HRZR_PGYFRFFVBA' (YETI_BUSINESS) within a UserAssist registry key."
+    },
+    {
+     "event": 43,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains ROT13 encoded suspicious strings in a UserAssist registry key."
+    },
+    {
+     "event": 45,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 46,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 48,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with Raccine.exe."
+    },
+    {
+     "event": 49,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with powershell.exe."
+    },
+    {
+     "event": 50,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with an input app."
+    },
+    {
+     "event": 51,
+     "window": "benign_bw",
+     "reason": "Explorer.EXE (SourceProcessId 1072) is spawning powershell.exe (TargetProcessId 7652)."
+    },
+    {
+     "event": 52,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with powershell.exe."
+    },
+    {
+     "event": 53,
+     "window": "benign_bw",
+     "reason": "UserAssist registry modification by Explorer.exe."
+    },
+    {
+     "event": 54,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains ROT13 encoded strings 'JvaqbjfCbjreFuryy' (WindowsPowerShell) and 'cbjrefuryy.rkr' (shellery.exe) within a UserAssist registry key."
+    },
+    {
+     "event": 55,
+     "window": "benign_bw",
+     "reason": "The process interaction involves PowerShell, which matches the encoded suspicious path in L1."
+    },
+    {
+     "event": 56,
+     "window": "benign_bw",
+     "reason": "The process interaction involves PowerShell, which matches the encoded suspicious path in L1."
+    },
+    {
+     "event": 57,
+     "window": "benign_bw",
+     "reason": "The process interaction involves PowerShell, which matches the encoded suspicious path in L1."
+    },
+    {
+     "event": 58,
+     "window": "benign_bw",
+     "reason": "The target process matches the pattern of process interaction seen in the attack context."
+    },
+    {
+     "event": 59,
+     "window": "benign_bw",
+     "reason": "The process 1072 (Explorer.EXE) is interacting with processes like Raccine.exe and powershell.exe via similar call traces, and conhost.exe is a target of the sa"
+    },
+    {
+     "event": 60,
+     "window": "benign_bw",
+     "reason": "The process 1072 (Explorer.EXE) is interacting with processes like Raccine.exe and powershell.exe via similar call traces, and conhost.exe is a target of the sa"
+    },
+    {
+     "event": 61,
+     "window": "benign_bw",
+     "reason": "The process 1072 (Explorer.EXE) is interacting with processes like Raccine.exe and powershell.exe via similar call traces, and conhost.exe is a target of the sa"
+    },
+    {
+     "event": 62,
+     "window": "benign_bw",
+     "reason": "The process 1072 (Explorer.EXE) is interacting with processes like Raccine.exe and powershell.exe via similar call traces, and conhost.exe is a target of the sa"
+    },
+    {
+     "event": 66,
+     "window": "benign_bw",
+     "reason": "The process is interacting with a different target process (MsMpEng.exe) via GrantedAccess=0x1000, consistent with the target interaction pattern in A1-A3."
+    },
+    {
+     "event": 67,
+     "window": "benign_bw",
+     "reason": "The process is interacting with a different target process (MsMpEng.exe) via GrantedAccess=0x1000, consistent with the target interaction pattern in A1-A3."
+    },
+    {
+     "event": 70,
+     "window": "benign_bw",
+     "reason": "The process is interacting with a different target process (MsMpEng.exe) via GrantedAccess=0x1000, consistent with the target interaction pattern in A1-A3."
+    },
+    {
+     "event": 71,
+     "window": "benign_bw",
+     "reason": "The process is interacting with a different target process (MsMpEng.exe) via GrantedAccess=0x1000, consistent with the target interaction pattern in A1-A3."
+    },
+    {
+     "event": 132,
+     "window": "benign_bw",
+     "reason": "Registry modification by Explorer.exe."
+    },
+    {
+     "event": 133,
+     "window": "benign_bw",
+     "reason": "Registry key creation by Explorer.exe."
+    },
+    {
+     "event": 134,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 135,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 136,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 137,
+     "window": "benign_bw",
+     "reason": "Target process interaction with svchost.exe follows the pattern established in the attack."
+    },
+    {
+     "event": 138,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with Raccine.exe."
+    },
+    {
+     "event": 139,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with powershell.exe."
+    },
+    {
+     "event": 140,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with Raccine.exe."
+    },
+    {
+     "event": 141,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with an input app."
+    },
+    {
+     "event": 142,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with Raccine.exe."
+    },
+    {
+     "event": 143,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with Raccine.exe."
+    },
+    {
+     "event": 144,
+     "window": "benign_bw",
+     "reason": "The target process matches the pattern of process interaction seen in the attack context."
+    },
+    {
+     "event": 145,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe."
+    },
+    {
+     "event": 146,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is accessing Raccine.exe."
+    },
+    {
+     "event": 148,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with conhost.exe."
+    },
+    {
+     "event": 149,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with conhost.exe."
+    },
+    {
+     "event": 150,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with conhost.exe."
+    },
+    {
+     "event": 151,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with conhost.exe."
+    },
+    {
+     "event": 152,
+     "window": "benign_bw",
+     "reason": "Registry value set to track PowerShell usage."
+    },
+    {
+     "event": 153,
+     "window": "benign_bw",
+     "reason": "Registry key creation by Explorer.exe."
+    },
+    {
+     "event": 154,
+     "window": "benign_bw",
+     "reason": "Registry value set by Explorer.exe in ActivityDataModel."
+    },
+    {
+     "event": 155,
+     "window": "benign_bw",
+     "reason": "Registry value set by Explorer.exe in ActivityDataModel."
+    },
+    {
+     "event": 156,
+     "window": "benign_bw",
+     "reason": "UserAssist registry key modification is being performed by Explorer.exe."
+    },
+    {
+     "event": 157,
+     "window": "benign_bw",
+     "reason": "The TargetObject contains obfuscated paths in the UserAssist registry key, suggesting an attempt to hide execution via ROT13-like encoding (e.g., JvaqbjfCbjreFu"
+    },
+    {
+     "event": 158,
+     "window": "benign_bw",
+     "reason": "The target process Raccine.exe is being interacted with by Explorer.exe."
+    },
+    {
+     "event": 159,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with powershell.exe via a process access event."
+    },
+    {
+     "event": 160,
+     "window": "benign_bw",
+     "reason": "Explorer.exe is interacting with an input app via a process access event."
+    },
+    {
+     "event": 162,
+     "window": "benign_bw",
+     "reason": "The process with ID 944 (svchost.exe) is interacting with process 1072 (Explorer.exe), which is the source process in the malicious events."
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "The registry path VFUProvider is suspicious and the event involves setting a StartTime value via svchost.exe."
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "The creation of a registry key in a non-standard location by svchost.exe (ProcessId=3172) is suspicious."
+    },
+    {
+     "event": 166,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 167,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 168,
+     "window": "benign_bw",
+     "reason": "The process is interacting with a different svchost.exe (PID 1040) via GrantedAccess=0x40, similar to the attack pattern in A1-A3."
+    },
+    {
+     "event": 169,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 170,
+     "window": "benign_bw",
+     "reason": "The process is interacting with a different svchost.exe (PID 1040) via GrantedAccess=0x40, similar to the attack pattern in A1-A3."
+    },
+    {
+     "event": 171,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 172,
+     "window": "benign_bw",
+     "reason": "The event involves source process 404 acting on target 3172, matching the context of the attack."
+    },
+    {
+     "event": 173,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 174,
+     "window": "benign_bw",
+     "reason": "The event involves source process 404 acting on target 3172, matching the context of the attack."
+    },
+    {
+     "event": 175,
+     "window": "benign_bw",
+     "reason": "The event involves source process 404 acting on target 3172, matching the context of the attack."
+    },
+    {
+     "event": 176,
+     "window": "benign_bw",
+     "reason": "The call trace matches the offset used in the malicious A1 event."
+    },
+    {
+     "event": 177,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 178,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 182,
+     "window": "benign_bw",
+     "reason": "The call trace matches the offset used in the malicious A1 event."
+    },
+    {
+     "event": 183,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    },
+    {
+     "event": 184,
+     "window": "benign_bw",
+     "reason": "The call trace contains lsm.dll which is present in all process interaction logs."
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "qwen",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/qwen/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "pass1": {
+    "counts": {
+     "attack": {
+      "attack": 87
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 8,
+      "normal": 85
+     },
+     "excluded": {
+      "attack": 1,
+      "normal": 3
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.086,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.086,
+    "no_verdict": 0,
+    "attack_unbound": 0,
+    "recall_unbound": 0,
+    "fp_unbound": 0
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "attack": 87
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "attack": 58,
+      "normal": 35
+     },
+     "excluded": {
+      "attack": 4
+     }
+    },
+    "recall": 1.0,
+    "fp_rate": 0.624,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.624,
+    "no_verdict": 0,
+    "attack_unbound": 0,
+    "recall_unbound": 0,
+    "fp_unbound": 0
+   },
+   "requests": 42,
+   "gen_seconds": 7976,
+   "finish": {
+    "stop": 42
+   },
+   "hit_limit": 0,
+   "rejected_quotes": 18,
+   "max_prompt_tokens": 12086,
+   "techniques": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003.001",
+     "T1012",
+     "T1055",
+     "T1057",
+     "T1059.001",
+     "T1070",
+     "T1112",
+     "T1218.011"
+    ],
+    "exact": true,
+    "parent": false,
+    "extra": 7,
+    "evidence_recall": 1.0,
+    "rejected": 3,
+    "file": "conclusions_v2.json"
+   },
+   "techniques_selected": {
+    "truth": [
+     "T1003.001"
+    ],
+    "concluded": [
+     "T1003",
+     "T1012",
+     "T1055",
+     "T1057",
+     "T1059",
+     "T1070",
+     "T1112",
+     "T1218"
+    ],
+    "exact": false,
+    "parent": true,
+    "extra": 8,
+    "evidence_recall": null
+   },
+   "missed_attack": [],
+   "false_positives": [
+    {
+     "event": 36,
+     "window": "benign_bw",
+     "reason": "EventID 1102 indicates the security audit log was cleared by user wardog, a common anti-forensic action used to cover tracks during an attack."
+    },
+    {
+     "event": 37,
+     "window": "benign_bw",
+     "reason": "Raccine.exe is a known tool used to bypass Windows Defender, indicating potential malicious activity."
+    },
+    {
+     "event": 38,
+     "window": "benign_bw",
+     "reason": "Another PowerShell spawn by Explorer.exe, consistent with the earlier suspicious activity."
+    },
+    {
+     "event": 40,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 41,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 45,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 46,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 48,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 49,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to powershell.exe, which is directly linked to the malicious PowerShell execution seen in reference event A2."
+    },
+    {
+     "event": 51,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to PID 7652 (powershell.exe), which is the same target process identified in attack lines A1 and A2."
+    },
+    {
+     "event": 52,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to PID 7652 (powershell.exe), which is the same target process identified in attack lines A1 and A2."
+    },
+    {
+     "event": 55,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to PID 7652 (powershell.exe), which is the same target process identified in attack lines A1 and A2."
+    },
+    {
+     "event": 56,
+     "window": "benign_bw",
+     "reason": "Explorer.exe spawning PowerShell is a common indicator of malicious activity or suspicious user behavior, especially when combined with other unusual process cr"
+    },
+    {
+     "event": 57,
+     "window": "benign_bw",
+     "reason": "Duplicate event for PowerShell spawn by Explorer.exe, reinforcing the suspicion of malicious activity."
+    },
+    {
+     "event": 58,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) spawning conhost.exe, a behavior often linked to malicious command execution or process injection, aligning with the attac"
+    },
+    {
+     "event": 59,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe (PID 7592), which is the console host for the malicious powershell.exe (PID 7652) identified in the"
+    },
+    {
+     "event": 60,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe (PID 7592), which is the console host for the malicious powershell.exe (PID 7652) identified in the"
+    },
+    {
+     "event": 61,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe (PID 7592), which is the console host for the malicious powershell.exe (PID 7652) identified in the"
+    },
+    {
+     "event": 62,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe (PID 7592), which is the console host for the malicious powershell.exe (PID 7652) identified in the"
+    },
+    {
+     "event": 63,
+     "window": "benign_bw",
+     "reason": "The creation of a Prefetch file for RUNDLL32.EXE by svchost.exe is highly anomalous, as svchost.exe does not typically execute rundll32.exe, which is a common L"
+    },
+    {
+     "event": 134,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), a pattern often associated with service manipulation or lateral "
+    },
+    {
+     "event": 135,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 136,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 137,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) interacting with another svchost.exe instance (PID 3252), consistent with the malicious activity of the source process."
+    },
+    {
+     "event": 138,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 139,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to powershell.exe, which is directly linked to the malicious PowerShell execution seen in reference event A2."
+    },
+    {
+     "event": 140,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 142,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 143,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 144,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) spawning conhost.exe, which is a common indicator of malicious command execution or process injection, aligning with the a"
+    },
+    {
+     "event": 145,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 146,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 148,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe, which is often launched in conjunction with malicious console applications like Raccine or PowerSh"
+    },
+    {
+     "event": 149,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe, which is often launched in conjunction with malicious console applications like Raccine or PowerSh"
+    },
+    {
+     "event": 150,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe, which is often launched in conjunction with malicious console applications like Raccine or PowerSh"
+    },
+    {
+     "event": 151,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to conhost.exe, which is often launched in conjunction with malicious console applications like Raccine or PowerSh"
+    },
+    {
+     "event": 152,
+     "window": "benign_bw",
+     "reason": "The event is a registry update tracking the use of powershell.exe, which is directly linked to the malicious PowerShell execution seen in reference event A2."
+    },
+    {
+     "event": 153,
+     "window": "benign_bw",
+     "reason": "The event is a registry key creation for FeatureUsage, which is part of the tracking of the malicious powershell.exe execution."
+    },
+    {
+     "event": 158,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to Raccine.exe, a tool used to bypass UAC, which is a common preparation step for privilege escalation attacks."
+    },
+    {
+     "event": 159,
+     "window": "benign_bw",
+     "reason": "The event shows Explorer.EXE opening a handle to powershell.exe, which is directly linked to the malicious PowerShell execution seen in reference event A2."
+    },
+    {
+     "event": 162,
+     "window": "benign_bw",
+     "reason": "The event shows svchost.exe (PID 944) spawning Explorer.EXE (PID 1072), which is the direct parent process of the malicious PowerShell and Raccine executions id"
+    },
+    {
+     "event": 163,
+     "window": "benign_bw",
+     "reason": "The TargetObject path contains a GUID-like suffix (418A073AA3BC3475) under the Notifications key, which is a common indicator of persistence or configuration ta"
+    },
+    {
+     "event": 164,
+     "window": "benign_bw",
+     "reason": "The TargetObject path is a child key of the VFUProvider registry key created in the referenced attack line A1, indicating this SetValue is part of the same mali"
+    },
+    {
+     "event": 165,
+     "window": "benign_bw",
+     "reason": "The creation of the VFUProvider registry key by svchost.exe is a known indicator of the BlueKeep (CVE-2019-0708) exploit, which is malicious activity."
+    },
+    {
+     "event": 166,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+111b6, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 167,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+111b6, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 169,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+111b6, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 171,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+111b6, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 172,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+f97f and lsm.dll+f7ad, which are related to the malicious process creation activity seen in A1, indicating this is part of the same"
+    },
+    {
+     "event": 173,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+f6ba, which is related to the malicious process creation activity seen in A1, indicating this is part of the same attack."
+    },
+    {
+     "event": 174,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+f97f and lsm.dll+f7ad, which are related to the malicious process creation activity seen in A1, indicating this is part of the same"
+    },
+    {
+     "event": 175,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+f6ba, which is related to the malicious process creation activity seen in A1, indicating this is part of the same attack."
+    },
+    {
+     "event": 176,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+106fe, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 177,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+108a0, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 178,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+10225, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 182,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+106fe, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 183,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+108a0, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    },
+    {
+     "event": 184,
+     "window": "benign_bw",
+     "reason": "The call trace shows lsm.dll+10225, which matches the offset in the known attack event A1, indicating this process creation is part of the same malicious activi"
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "model": "qwen_think",
+   "dataset": "win_lsass_comsvcs",
+   "run": "/home/ubuntu/forensics-option-a/proposals/2026-10-11/exp_i/runs/qwen_think/win_lsass_comsvcs",
+   "classes": {
+    "benign_bw": 93,
+    "attack": 87,
+    "excluded": 4
+   },
+   "final": {
+    "counts": {
+     "attack": {
+      "absent": 87
+     },
+     "benign_aw": {},
+     "benign_bw": {
+      "absent": 93
+     },
+     "excluded": {
+      "absent": 4
+     }
+    },
+    "recall": 0.0,
+    "fp_rate": 0.0,
+    "fp_rate_attack_windows": null,
+    "fp_rate_benign_windows": 0.0,
+    "no_verdict": 0,
+    "attack_unbound": 0,
+    "recall_unbound": 0,
+    "fp_unbound": 0
+   },
+   "requests": 5,
+   "gen_seconds": 3157,
+   "finish": {
+    "length": 2,
+    "stop": 3
+   },
+   "hit_limit": 2,
+   "rejected_quotes": 0,
+   "max_prompt_tokens": 10291,
+   "missed_attack": [
+    {
+     "event": 1,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 2,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 3,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 4,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 5,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 6,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 7,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 8,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 9,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 10,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 11,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 12,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 13,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 14,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 15,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 16,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 17,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 18,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 19,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 20,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 21,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 22,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 23,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 24,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 25,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 26,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 27,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 64,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 65,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 68,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 69,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 72,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 73,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 74,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 75,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 76,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 78,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 81,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 82,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 83,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 84,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 85,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 86,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 87,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 88,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 89,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 90,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 91,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 92,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 93,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 94,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 95,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 96,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 97,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 98,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 99,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 100,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 101,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 102,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 103,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 104,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 106,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 107,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 108,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 109,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 110,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 111,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 112,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 113,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 114,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 115,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 116,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 117,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 118,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 119,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 120,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 121,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 122,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 123,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 124,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 125,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 126,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 127,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 128,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 129,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 130,
+     "verdict": "absent",
+     "reason": ""
+    },
+    {
+     "event": 131,
+     "verdict": "absent",
+     "reason": ""
+    }
+   ],
+   "false_positives": [],
+   "status": "ok"
+  }
+ ],
+ "per_model": {
+  "final_fsec": {
+   "datasets": 1,
+   "macro_recall": 0.736,
+   "macro_fp_rate": 0.871,
+   "pooled_recall": 0.736,
+   "pooled_fp_rate": 0.871,
+   "no_verdict": 0,
+   "attack_unbound": 23,
+   "recall_unbound": 7,
+   "fp_unbound": 16,
+   "gen_seconds": 7396,
+   "technique_exact": 0,
+   "technique_parent_only": 0,
+   "technique_extra": 0
+  },
+  "final_gemma": {
+   "datasets": 6,
+   "macro_recall": 0.849,
+   "macro_fp_rate": 0.227,
+   "pooled_recall": 0.803,
+   "pooled_fp_rate": 0.282,
+   "no_verdict": 23,
+   "attack_unbound": 73,
+   "recall_unbound": 52,
+   "fp_unbound": 8,
+   "gen_seconds": 34981,
+   "technique_exact": 2,
+   "technique_parent_only": 0,
+   "technique_extra": 0
+  },
+  "fsec": {
+   "datasets": 1,
+   "macro_recall": 0.885,
+   "macro_fp_rate": 0.903,
+   "pooled_recall": 0.885,
+   "pooled_fp_rate": 0.903,
+   "no_verdict": 2,
+   "attack_unbound": 25,
+   "recall_unbound": 14,
+   "fp_unbound": 11,
+   "gen_seconds": 12296,
+   "technique_exact": 1,
+   "technique_parent_only": 0,
+   "technique_extra": 7
+  },
+  "fsec_after": {
+   "datasets": 1,
+   "macro_recall": 0.954,
+   "macro_fp_rate": 0.645,
+   "pooled_recall": 0.954,
+   "pooled_fp_rate": 0.645,
+   "no_verdict": 2,
+   "attack_unbound": 30,
+   "recall_unbound": 18,
+   "fp_unbound": 11,
+   "gen_seconds": 10371,
+   "technique_exact": 1,
+   "technique_parent_only": 0,
+   "technique_extra": 15
+  },
+  "gemma": {
+   "datasets": 1,
+   "macro_recall": 1.0,
+   "macro_fp_rate": 0.753,
+   "pooled_recall": 1.0,
+   "pooled_fp_rate": 0.753,
+   "no_verdict": 0,
+   "attack_unbound": 2,
+   "recall_unbound": 1,
+   "fp_unbound": 1,
+   "gen_seconds": 3241,
+   "technique_exact": 1,
+   "technique_parent_only": 0,
+   "technique_extra": 6
+  },
+  "gemma_sampled": {
+   "datasets": 1,
+   "macro_recall": 1.0,
+   "macro_fp_rate": 0.817,
+   "pooled_recall": 1.0,
+   "pooled_fp_rate": 0.817,
+   "no_verdict": 1,
+   "attack_unbound": 4,
+   "recall_unbound": 1,
+   "fp_unbound": 2,
+   "gen_seconds": 2874,
+   "technique_exact": 1,
+   "technique_parent_only": 0,
+   "technique_extra": 3
+  },
+  "qwen": {
+   "datasets": 1,
+   "macro_recall": 1.0,
+   "macro_fp_rate": 0.624,
+   "pooled_recall": 1.0,
+   "pooled_fp_rate": 0.624,
+   "no_verdict": 0,
+   "attack_unbound": 0,
+   "recall_unbound": 0,
+   "fp_unbound": 0,
+   "gen_seconds": 7976,
+   "technique_exact": 1,
+   "technique_parent_only": 0,
+   "technique_extra": 7
+  },
+  "qwen_think": {
+   "datasets": 1,
+   "macro_recall": 0.0,
+   "macro_fp_rate": 0.0,
+   "pooled_recall": 0.0,
+   "pooled_fp_rate": 0.0,
+   "no_verdict": 0,
+   "attack_unbound": 0,
+   "recall_unbound": 0,
+   "fp_unbound": 0,
+   "gen_seconds": 3157,
+   "technique_exact": 0,
+   "technique_parent_only": 0,
+   "technique_extra": 0
+  }
+ }
+}

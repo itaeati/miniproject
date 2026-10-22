@@ -1,0 +1,33 @@
+# Experiment I profile "gemma" with resident server (fresh_server_per_request = false).
+# Same decoding, budget, and harness as final_gemma.toml (thinking off, model sampling, 16K context).
+[paths]
+work_dir = "/home/ubuntu/forensics-option-a/hdf_runs"
+attack_stix = "/home/ubuntu/forensics-option-a/data/attack/enterprise-attack.json"
+
+[server]
+python = "/home/ubuntu/forensics-option-a/venv/bin/python3"
+script = "/home/ubuntu/server_tools/openvino_server.py"
+device = "GPU"
+port = 8086
+cleanup_command = ["bash", "/home/ubuntu/clean_memory.sh"]
+guard_min_available_mb = 2048
+repetition_max_ratio = 0.05
+
+[models.triage]
+name = "Gemma-4-26B-OV-INT4"
+path = "/home/ubuntu/llama-models/Gemma-4-26B-OV-INT4"
+enable_thinking = false
+sampling = "model"
+structured_after = ""
+fresh_server_per_request = false
+
+[models.reasoner]
+name = "Gemma-4-26B-OV-INT4"
+path = "/home/ubuntu/llama-models/Gemma-4-26B-OV-INT4"
+enable_thinking = false
+fresh_server_per_request = false
+
+[harness]
+output_base = 600
+output_per_line = 100
+evidence_tokens = 4000

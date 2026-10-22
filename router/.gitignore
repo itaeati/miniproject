@@ -1,0 +1,17 @@
+# Compiled binaries & object files
+packet_collect
+*.o
+*.out
+
+# Large ONNX external weights (>100MB GitHub limit)
+models/et_bert.onnx.data
+
+# Platform-specific shared libraries (aarch64)
+lib/*.so*
+
+# Runtime logs and temporary files
+*.log
+attack_packets.txt
+*.swp
+*.swo
+*~

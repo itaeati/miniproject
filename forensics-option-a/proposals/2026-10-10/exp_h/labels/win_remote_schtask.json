@@ -1,0 +1,341 @@
+{
+ "dataset": "win_remote_schtask",
+ "events": 1041,
+ "attack_events": 81,
+ "attack_share": 0.0778,
+ "seed_trace": [
+  {
+   "why": "seed E60",
+   "guid": null,
+   "host": "workstation5",
+   "pid": 460
+  },
+  {
+   "why": "seed parent E60",
+   "guid": null,
+   "host": "workstation5",
+   "pid": 6432
+  },
+  {
+   "why": "seed E466",
+   "guid": "67e11d8c-eb56-5fdd-1f97-000000000700",
+   "host": "workstation5",
+   "pid": 460
+  },
+  {
+   "why": "seed parent E466",
+   "guid": "67e11d8c-e98f-5fdd-0497-000000000700",
+   "host": "workstation5",
+   "pid": 6432
+  },
+  {
+   "why": "child E66",
+   "guid": null,
+   "host": "workstation5",
+   "pid": 8920
+  },
+  {
+   "why": "child E480",
+   "guid": "67e11d8c-eb56-5fdd-2097-000000000700",
+   "host": "workstation5",
+   "pid": 8920
+  }
+ ],
+ "attack_processes": 6,
+ "by_reason": {
+  "actor": 71,
+  "target": 4,
+  "artifact": 14
+ },
+ "labels": {
+  "60": [
+   "actor",
+   "target",
+   "artifact:eventcachemanager"
+  ],
+  "61": [
+   "actor"
+  ],
+  "62": [
+   "actor"
+  ],
+  "63": [
+   "actor"
+  ],
+  "64": [
+   "actor"
+  ],
+  "65": [
+   "actor"
+  ],
+  "66": [
+   "actor",
+   "target",
+   "artifact:eventcachemanager"
+  ],
+  "67": [
+   "actor"
+  ],
+  "68": [
+   "actor"
+  ],
+  "69": [
+   "actor"
+  ],
+  "70": [
+   "actor"
+  ],
+  "71": [
+   "actor"
+  ],
+  "72": [
+   "actor"
+  ],
+  "73": [
+   "actor"
+  ],
+  "74": [
+   "actor"
+  ],
+  "75": [
+   "actor"
+  ],
+  "76": [
+   "actor"
+  ],
+  "77": [
+   "actor"
+  ],
+  "465": [
+   "actor"
+  ],
+  "466": [
+   "actor",
+   "artifact:eventcachemanager"
+  ],
+  "467": [
+   "actor",
+   "target"
+  ],
+  "469": [
+   "actor"
+  ],
+  "470": [
+   "actor"
+  ],
+  "471": [
+   "actor"
+  ],
+  "472": [
+   "actor"
+  ],
+  "474": [
+   "actor"
+  ],
+  "475": [
+   "actor"
+  ],
+  "476": [
+   "actor"
+  ],
+  "477": [
+   "actor"
+  ],
+  "478": [
+   "actor"
+  ],
+  "479": [
+   "actor"
+  ],
+  "480": [
+   "actor",
+   "artifact:eventcachemanager"
+  ],
+  "481": [
+   "actor",
+   "target"
+  ],
+  "483": [
+   "actor"
+  ],
+  "484": [
+   "actor"
+  ],
+  "485": [
+   "actor"
+  ],
+  "486": [
+   "actor"
+  ],
+  "488": [
+   "actor"
+  ],
+  "489": [
+   "actor"
+  ],
+  "490": [
+   "actor"
+  ],
+  "491": [
+   "actor"
+  ],
+  "492": [
+   "actor"
+  ],
+  "493": [
+   "actor"
+  ],
+  "494": [
+   "actor"
+  ],
+  "495": [
+   "actor"
+  ],
+  "498": [
+   "actor"
+  ],
+  "499": [
+   "actor"
+  ],
+  "500": [
+   "actor"
+  ],
+  "501": [
+   "actor"
+  ],
+  "504": [
+   "actor"
+  ],
+  "505": [
+   "actor"
+  ],
+  "506": [
+   "actor"
+  ],
+  "507": [
+   "actor"
+  ],
+  "508": [
+   "actor"
+  ],
+  "509": [
+   "actor"
+  ],
+  "510": [
+   "actor"
+  ],
+  "511": [
+   "actor"
+  ],
+  "512": [
+   "actor"
+  ],
+  "513": [
+   "actor"
+  ],
+  "514": [
+   "actor"
+  ],
+  "515": [
+   "actor"
+  ],
+  "516": [
+   "actor"
+  ],
+  "517": [
+   "actor"
+  ],
+  "518": [
+   "actor"
+  ],
+  "519": [
+   "actor"
+  ],
+  "520": [
+   "actor"
+  ],
+  "521": [
+   "actor"
+  ],
+  "522": [
+   "actor"
+  ],
+  "523": [
+   "actor"
+  ],
+  "525": [
+   "actor"
+  ],
+  "526": [
+   "actor"
+  ],
+  "578": [
+   "artifact:eventcachemanager"
+  ],
+  "603": [
+   "artifact:eventcachemanager"
+  ],
+  "604": [
+   "artifact:eventcachemanager"
+  ],
+  "894": [
+   "artifact:eventcachemanager"
+  ],
+  "895": [
+   "artifact:eventcachemanager"
+  ],
+  "896": [
+   "artifact:eventcachemanager"
+  ],
+  "897": [
+   "artifact:eventcachemanager"
+  ],
+  "899": [
+   "artifact:eventcachemanager"
+  ],
+  "905": [
+   "artifact:eventcachemanager"
+  ],
+  "908": [
+   "artifact:eventcachemanager"
+  ]
+ },
+ "ambiguous_target_only": [
+  108,
+  110,
+  114,
+  115,
+  130,
+  131,
+  132,
+  134,
+  453,
+  455,
+  460,
+  461,
+  468,
+  473,
+  482,
+  487,
+  496,
+  497,
+  502,
+  503
+ ],
+ "near_unattributed": {
+  "574": "security:4672",
+  "575": "security:4624",
+  "576": "security:4627",
+  "579": "security:4634"
+ },
+ "spec": {
+  "seed_cmd": [
+   "schtasks /create"
+  ],
+  "include_parent": true,
+  "artifacts": [
+   "EventCacheManager"
+  ],
+  "source": "SDWIN-201219070027 adversary_view (task name)"
+ }
+}

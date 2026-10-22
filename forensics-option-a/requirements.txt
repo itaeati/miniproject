@@ -1,0 +1,5 @@
+openvino>=2025.0.0
+openvino-genai>=2025.0.0
+transformers>=4.45.0
+PyYAML>=6.0
+python-evtx==0.8.1

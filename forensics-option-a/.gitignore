@@ -1,0 +1,36 @@
+# Python virtual environments & bytecode cache
+venv/
+venv_*/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Runtime outputs, logs, and temporary working directories
+hdf_runs/
+*.log
+logs/
+temp_analysis/
+intermediate_reports/
+backups/
+
+# Large raw forensic evidence & downloaded evaluation datasets
+evidence/
+evidence_*/
+data/apt29_raw/
+data/eval/
+data/attack/
+
+# Historical experiment runs, model caches, and raw DBs inside proposals
+proposals/**/runs/
+proposals/**/runs_*/
+proposals/**/cache/
+proposals/**/data/
+proposals/**/dry/
+proposals/**/smoke/
+proposals/**/aborted_*/
+proposals/**/base/
+proposals/2026-10-11/exp_i/overnight_status.json
+
+# Legacy / unversioned experiments
+experiments/
+reports/

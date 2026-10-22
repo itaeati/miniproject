@@ -1,0 +1,183 @@
+{
+ "dataset": "win_bitsadmin_download",
+ "events": 424,
+ "attack_events": 34,
+ "attack_share": 0.0802,
+ "seed_trace": [
+  {
+   "why": "seed E3",
+   "guid": null,
+   "host": "workstation5",
+   "pid": 9260
+  },
+  {
+   "why": "seed parent E3",
+   "guid": null,
+   "host": "workstation5",
+   "pid": 10044
+  },
+  {
+   "why": "seed E118",
+   "guid": "39e4a257-79fb-5f92-7117-000000000700",
+   "host": "workstation5",
+   "pid": 9260
+  },
+  {
+   "why": "seed parent E118",
+   "guid": "39e4a257-79ed-5f92-6e17-000000000700",
+   "host": "workstation5",
+   "pid": 10044
+  }
+ ],
+ "attack_processes": 4,
+ "by_reason": {
+  "actor": 34,
+  "target": 2,
+  "artifact": 2
+ },
+ "labels": {
+  "3": [
+   "actor",
+   "target",
+   "artifact:bitsadmin1_flag.ps1"
+  ],
+  "4": [
+   "actor"
+  ],
+  "5": [
+   "actor"
+  ],
+  "6": [
+   "actor"
+  ],
+  "7": [
+   "actor"
+  ],
+  "8": [
+   "actor"
+  ],
+  "81": [
+   "actor"
+  ],
+  "117": [
+   "actor"
+  ],
+  "118": [
+   "actor",
+   "artifact:bitsadmin1_flag.ps1"
+  ],
+  "119": [
+   "actor",
+   "target"
+  ],
+  "121": [
+   "actor"
+  ],
+  "122": [
+   "actor"
+  ],
+  "123": [
+   "actor"
+  ],
+  "125": [
+   "actor"
+  ],
+  "126": [
+   "actor"
+  ],
+  "127": [
+   "actor"
+  ],
+  "128": [
+   "actor"
+  ],
+  "129": [
+   "actor"
+  ],
+  "130": [
+   "actor"
+  ],
+  "131": [
+   "actor"
+  ],
+  "132": [
+   "actor"
+  ],
+  "133": [
+   "actor"
+  ],
+  "134": [
+   "actor"
+  ],
+  "135": [
+   "actor"
+  ],
+  "136": [
+   "actor"
+  ],
+  "137": [
+   "actor"
+  ],
+  "138": [
+   "actor"
+  ],
+  "139": [
+   "actor"
+  ],
+  "142": [
+   "actor"
+  ],
+  "152": [
+   "actor"
+  ],
+  "334": [
+   "actor"
+  ],
+  "371": [
+   "actor"
+  ],
+  "372": [
+   "actor"
+  ],
+  "373": [
+   "actor"
+  ]
+ },
+ "ambiguous_target_only": [
+  101,
+  102,
+  105,
+  106,
+  108,
+  110,
+  111,
+  120,
+  124,
+  140,
+  141,
+  143,
+  144,
+  330,
+  410
+ ],
+ "near_unattributed": {
+  "1": "security:1102",
+  "10": "security:4627",
+  "11": "security:4672",
+  "74": "security:4799",
+  "75": "security:4799",
+  "422": "system:104",
+  "423": "system:104",
+  "424": "system:7040"
+ },
+ "spec": {
+  "seed_cmd": [
+   "/transfer /Download"
+  ],
+  "include_parent": true,
+  "artifacts": [
+   "bitsadmin1_flag.ps1"
+  ],
+  "source": "SDWIN-201023023651 adversary_view"
+ }
+}

@@ -1,0 +1,1570 @@
+{
+ "dataset": "win_ntds_ntdsutil",
+ "events": 11184,
+ "attack_events": 246,
+ "attack_share": 0.022,
+ "seed_trace": [
+  {
+   "why": "seed E179",
+   "guid": null,
+   "host": "dc01",
+   "pid": 2772
+  },
+  {
+   "why": "seed parent E179",
+   "guid": null,
+   "host": "dc01",
+   "pid": 3824
+  },
+  {
+   "why": "seed E6297",
+   "guid": "fe86be69-0959-64b8-0b03-000000001000",
+   "host": "dc01",
+   "pid": 2772
+  },
+  {
+   "why": "seed parent E6297",
+   "guid": "fe86be69-090f-64b8-0903-000000001000",
+   "host": "dc01",
+   "pid": 3824
+  },
+  {
+   "why": "child E113",
+   "guid": null,
+   "host": "dc01",
+   "pid": 4760
+  },
+  {
+   "why": "child E2059",
+   "guid": "fe86be69-0910-64b8-0a03-000000001000",
+   "host": "dc01",
+   "pid": 4760
+  }
+ ],
+ "attack_processes": 6,
+ "by_reason": {
+  "actor": 237,
+  "target": 5,
+  "artifact": 19
+ },
+ "labels": {
+  "62": [
+   "artifact:$snap_202307190903"
+  ],
+  "63": [
+   "artifact:ntds_t1003"
+  ],
+  "64": [
+   "artifact:ntds_t1003"
+  ],
+  "66": [
+   "artifact:ntds_t1003"
+  ],
+  "67": [
+   "artifact:$snap_202307190903"
+  ],
+  "113": [
+   "actor",
+   "target"
+  ],
+  "179": [
+   "actor",
+   "target",
+   "artifact:ntds_t1003"
+  ],
+  "180": [
+   "actor"
+  ],
+  "181": [
+   "actor"
+  ],
+  "182": [
+   "actor"
+  ],
+  "184": [
+   "actor"
+  ],
+  "1213": [
+   "actor"
+  ],
+  "1214": [
+   "actor"
+  ],
+  "1215": [
+   "actor"
+  ],
+  "1216": [
+   "actor"
+  ],
+  "1217": [
+   "actor"
+  ],
+  "1218": [
+   "actor"
+  ],
+  "1219": [
+   "actor"
+  ],
+  "1220": [
+   "actor"
+  ],
+  "1221": [
+   "actor"
+  ],
+  "1222": [
+   "actor"
+  ],
+  "1223": [
+   "actor"
+  ],
+  "1224": [
+   "actor"
+  ],
+  "1225": [
+   "actor"
+  ],
+  "1226": [
+   "actor"
+  ],
+  "1227": [
+   "actor"
+  ],
+  "1228": [
+   "actor"
+  ],
+  "1229": [
+   "actor"
+  ],
+  "1230": [
+   "actor"
+  ],
+  "1231": [
+   "actor"
+  ],
+  "1232": [
+   "actor"
+  ],
+  "1233": [
+   "actor"
+  ],
+  "1234": [
+   "actor"
+  ],
+  "1235": [
+   "actor"
+  ],
+  "1236": [
+   "actor"
+  ],
+  "1237": [
+   "actor"
+  ],
+  "1238": [
+   "actor"
+  ],
+  "1239": [
+   "actor"
+  ],
+  "1240": [
+   "actor"
+  ],
+  "1241": [
+   "actor"
+  ],
+  "1242": [
+   "actor"
+  ],
+  "1243": [
+   "actor"
+  ],
+  "1244": [
+   "actor"
+  ],
+  "1245": [
+   "actor"
+  ],
+  "1246": [
+   "actor"
+  ],
+  "1247": [
+   "actor"
+  ],
+  "1248": [
+   "actor"
+  ],
+  "1249": [
+   "actor"
+  ],
+  "1250": [
+   "actor"
+  ],
+  "1251": [
+   "actor"
+  ],
+  "1252": [
+   "actor"
+  ],
+  "1253": [
+   "actor"
+  ],
+  "1254": [
+   "actor"
+  ],
+  "1255": [
+   "actor"
+  ],
+  "1256": [
+   "actor"
+  ],
+  "1257": [
+   "actor"
+  ],
+  "1258": [
+   "actor"
+  ],
+  "1259": [
+   "actor"
+  ],
+  "1260": [
+   "actor"
+  ],
+  "1261": [
+   "actor"
+  ],
+  "1262": [
+   "actor"
+  ],
+  "1263": [
+   "actor"
+  ],
+  "1264": [
+   "actor"
+  ],
+  "1265": [
+   "actor"
+  ],
+  "1266": [
+   "actor"
+  ],
+  "1267": [
+   "actor"
+  ],
+  "1268": [
+   "actor"
+  ],
+  "1269": [
+   "actor"
+  ],
+  "1270": [
+   "actor"
+  ],
+  "1271": [
+   "actor"
+  ],
+  "1272": [
+   "actor"
+  ],
+  "1273": [
+   "actor"
+  ],
+  "1299": [
+   "actor"
+  ],
+  "1411": [
+   "actor"
+  ],
+  "2048": [
+   "actor"
+  ],
+  "2055": [
+   "actor"
+  ],
+  "2056": [
+   "actor"
+  ],
+  "2057": [
+   "actor"
+  ],
+  "2058": [
+   "actor"
+  ],
+  "2059": [
+   "actor"
+  ],
+  "2060": [
+   "actor"
+  ],
+  "2061": [
+   "actor"
+  ],
+  "2062": [
+   "actor"
+  ],
+  "2063": [
+   "actor"
+  ],
+  "2065": [
+   "actor"
+  ],
+  "2066": [
+   "actor"
+  ],
+  "2067": [
+   "actor"
+  ],
+  "2068": [
+   "actor"
+  ],
+  "2069": [
+   "actor"
+  ],
+  "2070": [
+   "actor"
+  ],
+  "2071": [
+   "actor"
+  ],
+  "2072": [
+   "actor"
+  ],
+  "2073": [
+   "actor",
+   "target"
+  ],
+  "2074": [
+   "actor"
+  ],
+  "2075": [
+   "actor"
+  ],
+  "2076": [
+   "actor"
+  ],
+  "2077": [
+   "actor"
+  ],
+  "2078": [
+   "actor"
+  ],
+  "2079": [
+   "actor"
+  ],
+  "2080": [
+   "actor"
+  ],
+  "2082": [
+   "actor"
+  ],
+  "2084": [
+   "actor"
+  ],
+  "2085": [
+   "actor"
+  ],
+  "2086": [
+   "actor"
+  ],
+  "2087": [
+   "actor"
+  ],
+  "2088": [
+   "actor"
+  ],
+  "2089": [
+   "actor"
+  ],
+  "2090": [
+   "actor"
+  ],
+  "2091": [
+   "actor"
+  ],
+  "2092": [
+   "actor"
+  ],
+  "2093": [
+   "actor"
+  ],
+  "2094": [
+   "actor"
+  ],
+  "2097": [
+   "actor"
+  ],
+  "2099": [
+   "actor"
+  ],
+  "2100": [
+   "actor"
+  ],
+  "2103": [
+   "actor"
+  ],
+  "2104": [
+   "actor"
+  ],
+  "2105": [
+   "actor"
+  ],
+  "2151": [
+   "actor"
+  ],
+  "2152": [
+   "actor"
+  ],
+  "2153": [
+   "actor"
+  ],
+  "2154": [
+   "actor"
+  ],
+  "2155": [
+   "actor"
+  ],
+  "2156": [
+   "actor"
+  ],
+  "2157": [
+   "actor"
+  ],
+  "2158": [
+   "actor"
+  ],
+  "3581": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "6296": [
+   "actor"
+  ],
+  "6297": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "6298": [
+   "actor",
+   "target"
+  ],
+  "6300": [
+   "actor"
+  ],
+  "6301": [
+   "actor"
+  ],
+  "6302": [
+   "actor"
+  ],
+  "6303": [
+   "actor",
+   "target"
+  ],
+  "6304": [
+   "actor"
+  ],
+  "6305": [
+   "actor"
+  ],
+  "6306": [
+   "actor"
+  ],
+  "6307": [
+   "actor"
+  ],
+  "6308": [
+   "actor"
+  ],
+  "6309": [
+   "actor"
+  ],
+  "6310": [
+   "actor"
+  ],
+  "6311": [
+   "actor"
+  ],
+  "6312": [
+   "actor"
+  ],
+  "6313": [
+   "actor"
+  ],
+  "6314": [
+   "actor"
+  ],
+  "6315": [
+   "actor"
+  ],
+  "6316": [
+   "actor"
+  ],
+  "6317": [
+   "actor"
+  ],
+  "6318": [
+   "actor"
+  ],
+  "6319": [
+   "actor"
+  ],
+  "6320": [
+   "actor"
+  ],
+  "6321": [
+   "actor"
+  ],
+  "6322": [
+   "actor"
+  ],
+  "6323": [
+   "actor"
+  ],
+  "6324": [
+   "actor"
+  ],
+  "6325": [
+   "actor"
+  ],
+  "6326": [
+   "actor"
+  ],
+  "6327": [
+   "actor"
+  ],
+  "6328": [
+   "actor"
+  ],
+  "6329": [
+   "actor"
+  ],
+  "6330": [
+   "actor"
+  ],
+  "6331": [
+   "actor"
+  ],
+  "6332": [
+   "actor"
+  ],
+  "6333": [
+   "actor"
+  ],
+  "6336": [
+   "actor"
+  ],
+  "6337": [
+   "actor"
+  ],
+  "6338": [
+   "actor"
+  ],
+  "6339": [
+   "actor"
+  ],
+  "6340": [
+   "actor"
+  ],
+  "6341": [
+   "actor"
+  ],
+  "6342": [
+   "actor"
+  ],
+  "6343": [
+   "actor"
+  ],
+  "6344": [
+   "actor"
+  ],
+  "6345": [
+   "actor"
+  ],
+  "6346": [
+   "actor"
+  ],
+  "6347": [
+   "actor"
+  ],
+  "6348": [
+   "actor"
+  ],
+  "6349": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "6350": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "6352": [
+   "actor"
+  ],
+  "6353": [
+   "actor"
+  ],
+  "6356": [
+   "actor"
+  ],
+  "6357": [
+   "actor"
+  ],
+  "6358": [
+   "actor"
+  ],
+  "6359": [
+   "actor"
+  ],
+  "6360": [
+   "actor"
+  ],
+  "6408": [
+   "actor"
+  ],
+  "6421": [
+   "actor"
+  ],
+  "6422": [
+   "actor"
+  ],
+  "6423": [
+   "actor"
+  ],
+  "6424": [
+   "actor"
+  ],
+  "6425": [
+   "actor"
+  ],
+  "6511": [
+   "actor"
+  ],
+  "6516": [
+   "actor"
+  ],
+  "6517": [
+   "actor"
+  ],
+  "6592": [
+   "actor"
+  ],
+  "6597": [
+   "actor"
+  ],
+  "6634": [
+   "actor"
+  ],
+  "6635": [
+   "actor"
+  ],
+  "7622": [
+   "actor"
+  ],
+  "7623": [
+   "actor"
+  ],
+  "7640": [
+   "actor"
+  ],
+  "7641": [
+   "actor"
+  ],
+  "7699": [
+   "actor"
+  ],
+  "7700": [
+   "actor"
+  ],
+  "7736": [
+   "actor"
+  ],
+  "7739": [
+   "actor",
+   "artifact:$snap_202307190903"
+  ],
+  "7788": [
+   "artifact:$snap_202307190903"
+  ],
+  "7789": [
+   "actor"
+  ],
+  "7790": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "7791": [
+   "actor"
+  ],
+  "7792": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "7794": [
+   "actor"
+  ],
+  "8136": [
+   "actor"
+  ],
+  "8137": [
+   "actor"
+  ],
+  "8138": [
+   "actor"
+  ],
+  "8139": [
+   "actor"
+  ],
+  "8140": [
+   "actor"
+  ],
+  "8141": [
+   "actor"
+  ],
+  "8142": [
+   "actor"
+  ],
+  "8143": [
+   "actor"
+  ],
+  "8144": [
+   "actor"
+  ],
+  "8145": [
+   "actor"
+  ],
+  "8146": [
+   "actor"
+  ],
+  "8147": [
+   "actor"
+  ],
+  "8148": [
+   "actor"
+  ],
+  "8149": [
+   "actor"
+  ],
+  "8150": [
+   "actor"
+  ],
+  "8151": [
+   "actor"
+  ],
+  "8152": [
+   "actor"
+  ],
+  "8153": [
+   "actor"
+  ],
+  "8154": [
+   "actor"
+  ],
+  "8155": [
+   "actor"
+  ],
+  "8156": [
+   "actor"
+  ],
+  "8157": [
+   "actor"
+  ],
+  "8158": [
+   "actor"
+  ],
+  "8159": [
+   "actor"
+  ],
+  "8160": [
+   "actor"
+  ],
+  "8161": [
+   "actor"
+  ],
+  "8162": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "8163": [
+   "actor"
+  ],
+  "8164": [
+   "actor",
+   "artifact:ntds_t1003"
+  ],
+  "8184": [
+   "artifact:$snap_202307190903"
+  ],
+  "8186": [
+   "artifact:$snap_202307190903"
+  ],
+  "8203": [
+   "artifact:$snap_202307190903"
+  ],
+  "9138": [
+   "actor"
+  ]
+ },
+ "ambiguous_target_only": [
+  108,
+  2049,
+  2050,
+  2064,
+  2081,
+  2083,
+  2095,
+  2096,
+  2098,
+  2101,
+  2102,
+  2106,
+  2107,
+  2108,
+  2109,
+  2110,
+  2111,
+  2112,
+  2113,
+  2116,
+  2117,
+  2118,
+  2119,
+  2120,
+  2121,
+  2122,
+  2123,
+  2124,
+  2125,
+  2126,
+  2127,
+  2128,
+  2129,
+  2130,
+  2132,
+  2134,
+  2135,
+  2136,
+  2137,
+  2138,
+  2141,
+  2142,
+  2143,
+  2144,
+  2145,
+  2146,
+  2147,
+  2430,
+  2431,
+  2432,
+  2433,
+  2434,
+  2435,
+  2454,
+  2726,
+  2727,
+  2728,
+  2729,
+  2730,
+  2731,
+  3015,
+  3016,
+  3017,
+  3018,
+  3019,
+  3020,
+  3026,
+  3028,
+  3300,
+  3301,
+  3302,
+  3303,
+  3304,
+  3305,
+  3573,
+  3574,
+  3575,
+  3576,
+  3577,
+  3578,
+  3843,
+  3844,
+  3845,
+  3846,
+  3847,
+  3848,
+  4119,
+  4120,
+  4121,
+  4122,
+  4123,
+  4124,
+  4399,
+  4400,
+  4401,
+  4402,
+  4403,
+  4404,
+  4668,
+  4669,
+  4670,
+  4671,
+  4672,
+  4673,
+  4943,
+  4944,
+  4945,
+  4946,
+  4947,
+  4948,
+  5212,
+  5213,
+  5214,
+  5215,
+  5216,
+  5217,
+  5481,
+  5482,
+  5483,
+  5484,
+  5485,
+  5486,
+  5750,
+  5751,
+  5752,
+  5753,
+  5754,
+  5755,
+  6019,
+  6020,
+  6021,
+  6022,
+  6023,
+  6024,
+  6288,
+  6289,
+  6290,
+  6291,
+  6292,
+  6293,
+  6299,
+  6334,
+  6335,
+  6351,
+  6354,
+  6355,
+  6426,
+  6427,
+  6428,
+  6429,
+  6468,
+  6469,
+  6471,
+  6472,
+  6474,
+  6475,
+  6480,
+  6481,
+  6485,
+  6486,
+  6491,
+  6492,
+  6504,
+  6505,
+  6507,
+  6508,
+  6567,
+  6593,
+  6594,
+  6595,
+  6596,
+  6600,
+  6601,
+  6602,
+  6603,
+  6604,
+  6605,
+  6606,
+  6607,
+  6608,
+  6609,
+  6613,
+  6614,
+  6615,
+  6616,
+  6617,
+  6618,
+  6619,
+  6620,
+  6624,
+  6625,
+  6626,
+  6627,
+  6628,
+  6629,
+  6630,
+  6631,
+  6821,
+  6822,
+  6828,
+  6829,
+  6832,
+  6833,
+  6836,
+  6837,
+  6861,
+  6862,
+  6865,
+  6866,
+  7157,
+  7158,
+  7159,
+  7160,
+  7161,
+  7162,
+  7163,
+  7164,
+  7165,
+  7519,
+  7520,
+  7521,
+  7522,
+  7523,
+  7524,
+  7525,
+  7526,
+  7527,
+  7556,
+  7557,
+  7560,
+  7561,
+  7571,
+  7572,
+  7575,
+  7576,
+  7584,
+  7585,
+  7588,
+  7589,
+  7618,
+  7624,
+  7625,
+  7626,
+  7627,
+  7631,
+  7632,
+  7634,
+  7635,
+  7637,
+  7638,
+  7642,
+  7643,
+  7644,
+  7645,
+  7651,
+  7652,
+  7661,
+  7662,
+  7664,
+  7665,
+  7667,
+  7668,
+  7671,
+  7672,
+  7675,
+  7676,
+  7679,
+  7680,
+  7696,
+  7697,
+  7701,
+  7702,
+  7703,
+  7704,
+  7713,
+  7714,
+  7715,
+  7716,
+  7717,
+  7718,
+  7720,
+  7721,
+  7722,
+  7723,
+  7724,
+  7725,
+  7728,
+  7729,
+  7730,
+  7732,
+  7733,
+  7734,
+  7793,
+  7795,
+  8116,
+  8117,
+  8118,
+  8119,
+  8120,
+  8121,
+  8122,
+  8123,
+  8124,
+  8481,
+  8482,
+  8483,
+  8484,
+  8485,
+  8486,
+  8487,
+  8488,
+  8489,
+  8896,
+  8897,
+  8898,
+  8899,
+  8900,
+  8901,
+  8902,
+  8903,
+  8904,
+  8917,
+  9245,
+  9507,
+  9508,
+  9509,
+  9510,
+  9511,
+  9512,
+  9575,
+  9847,
+  9848,
+  9849,
+  9850,
+  9851,
+  9852,
+  10007,
+  10388,
+  10389,
+  10390,
+  10391,
+  10392,
+  10393,
+  10672,
+  10673,
+  10674,
+  10675,
+  10676,
+  10677,
+  10949,
+  10950,
+  10951,
+  10952,
+  10953,
+  10954
+ ],
+ "near_unattributed": {
+  "1": "directory service:102",
+  "2": "directory service:300",
+  "3": "directory service:330",
+  "4": "directory service:301",
+  "5": "directory service:301",
+  "6": "directory service:302",
+  "7": "directory service:105",
+  "8": "directory service:330",
+  "9": "directory service:326",
+  "10": "directory service:330",
+  "11": "directory service:2001",
+  "12": "directory service:1917",
+  "13": "application:412",
+  "14": "application:412",
+  "15": "application:412",
+  "16": "application:412",
+  "17": "application:412",
+  "18": "application:412",
+  "19": "application:412",
+  "20": "application:412",
+  "21": "application:412",
+  "22": "application:412",
+  "23": "application:412",
+  "24": "application:412",
+  "25": "application:412",
+  "26": "application:412",
+  "27": "application:412",
+  "28": "application:412",
+  "29": "application:412",
+  "30": "application:412",
+  "31": "application:412",
+  "32": "application:412",
+  "33": "application:412",
+  "34": "application:412",
+  "35": "application:412",
+  "36": "application:412",
+  "37": "application:412",
+  "38": "application:412",
+  "48": "application:2005",
+  "49": "application:2001",
+  "50": "application:2003",
+  "51": "application:2006",
+  "52": "application:102",
+  "53": "application:300",
+  "54": "application:216",
+  "55": "application:330",
+  "56": "application:301",
+  "57": "application:302",
+  "58": "application:105",
+  "59": "application:103",
+  "60": "application:102",
+  "61": "application:105",
+  "65": "application:330",
+  "68": "application:103",
+  "74": "application:412",
+  "75": "application:412",
+  "76": "application:412",
+  "77": "application:412",
+  "78": "application:412",
+  "79": "application:412",
+  "80": "application:412",
+  "81": "application:412",
+  "90": "security:4672",
+  "91": "security:4624",
+  "92": "security:4627",
+  "93": "security:5140",
+  "94": "security:5145",
+  "98": "security:5152",
+  "121": "security:5152",
+  "186": "security:4627",
+  "187": "security:4672",
+  "195": "security:4799",
+  "200": "security:4799",
+  "205": "security:4799",
+  "210": "security:4799",
+  "215": "security:4799",
+  "220": "security:4799",
+  "225": "security:4799",
+  "230": "security:4799",
+  "235": "security:4799",
+  "240": "security:4799",
+  "245": "security:4799",
+  "250": "security:4799",
+  "255": "security:4799",
+  "260": "security:4799",
+  "265": "security:4799",
+  "270": "security:4799",
+  "275": "security:4799",
+  "280": "security:4799",
+  "285": "security:4799",
+  "290": "security:4799",
+  "296": "security:4799",
+  "301": "security:4799",
+  "306": "security:4799",
+  "311": "security:4799",
+  "316": "security:4799",
+  "321": "security:4799",
+  "326": "security:4799",
+  "331": "security:4799",
+  "334": "security:4627",
+  "335": "security:4672",
+  "341": "security:4799",
+  "346": "security:4799",
+  "351": "security:4799",
+  "356": "security:4799",
+  "361": "security:4799",
+  "366": "security:4799",
+  "371": "security:4799",
+  "376": "security:4799",
+  "381": "security:4799",
+  "386": "security:4799",
+  "391": "security:4799",
+  "396": "security:4799",
+  "401": "security:4799",
+  "406": "security:4799",
+  "411": "security:4799",
+  "416": "security:4799",
+  "421": "security:4799",
+  "426": "security:4799",
+  "431": "security:4799",
+  "436": "security:4799",
+  "441": "security:4799",
+  "446": "security:4799",
+  "451": "security:4799",
+  "456": "security:4799",
+  "461": "security:4799",
+  "466": "security:4799",
+  "471": "security:4799",
+  "476": "security:4799",
+  "481": "security:4799",
+  "486": "security:4799",
+  "491": "security:4799",
+  "496": "security:4799",
+  "501": "security:4799",
+  "506": "security:4799",
+  "511": "security:4799",
+  "516": "security:4799",
+  "521": "security:4799",
+  "526": "security:4799",
+  "531": "security:4799",
+  "536": "security:4799",
+  "541": "security:4799",
+  "546": "security:4799",
+  "551": "security:4799",
+  "556": "security:4799",
+  "561": "security:4799",
+  "566": "security:4799",
+  "571": "security:4799",
+  "576": "security:4799",
+  "581": "security:4799",
+  "586": "security:4799",
+  "591": "security:4799",
+  "596": "security:4799",
+  "601": "security:4799",
+  "606": "security:4799",
+  "611": "security:4799",
+  "616": "security:4799",
+  "621": "security:4799",
+  "626": "security:4799",
+  "631": "security:4799",
+  "636": "security:4799",
+  "641": "security:4799",
+  "646": "security:4799",
+  "651": "security:4799",
+  "656": "security:4799",
+  "661": "security:4799",
+  "666": "security:4799",
+  "671": "security:4799",
+  "676": "security:4799",
+  "681": "security:4799",
+  "686": "security:4799",
+  "706": "security:4799",
+  "711": "security:4799",
+  "716": "security:4799",
+  "721": "security:4799",
+  "726": "security:4799",
+  "731": "security:4799",
+  "736": "security:4799",
+  "741": "security:4799",
+  "746": "security:4799",
+  "751": "security:4799",
+  "756": "security:4799",
+  "761": "security:4799",
+  "766": "security:4799",
+  "771": "security:4799",
+  "776": "security:4799",
+  "781": "security:4799",
+  "786": "security:4799",
+  "791": "security:4799",
+  "796": "security:4799",
+  "801": "security:4799",
+  "806": "security:4799",
+  "811": "security:4799",
+  "816": "security:4799",
+  "821": "security:4799",
+  "826": "security:4799",
+  "831": "security:4799",
+  "836": "security:4799",
+  "841": "security:4799",
+  "846": "security:4799",
+  "851": "security:4799",
+  "856": "security:4799",
+  "861": "security:4799",
+  "866": "security:4799",
+  "871": "security:4799",
+  "876": "security:4799",
+  "881": "security:4799",
+  "947": "security:8222",
+  "952": "security:4799",
+  "957": "security:4799",
+  "962": "security:4799",
+  "967": "security:4799",
+  "972": "security:4799",
+  "977": "security:4799",
+  "982": "security:4799",
+  "987": "security:4799",
+  "992": "security:4799",
+  "997": "security:4799",
+  "1002": "security:4799",
+  "1007": "security:4799",
+  "1012": "security:4799",
+  "1017": "security:4799",
+  "1022": "security:4799",
+  "1027": "security:4799",
+  "1032": "security:4799",
+  "1037": "security:4799",
+  "1042": "security:4799",
+  "1047": "security:4799",
+  "1052": "security:4799",
+  "1057": "security:4799",
+  "1062": "security:4799",
+  "1067": "security:4799",
+  "1072": "security:4799",
+  "1077": "security:4799",
+  "1082": "security:4799",
+  "1087": "security:4799",
+  "1092": "security:4799",
+  "1097": "security:4799",
+  "1102": "security:4799",
+  "1107": "security:4799",
+  "1112": "security:4799",
+  "1117": "security:4799",
+  "1122": "security:4799",
+  "1127": "security:4799",
+  "1132": "security:4799",
+  "1137": "security:4799",
+  "1142": "security:4799",
+  "1147": "security:4799",
+  "1152": "security:4799",
+  "1157": "security:4799",
+  "1162": "security:4799",
+  "1167": "security:4799",
+  "1172": "security:4799",
+  "1177": "security:4799",
+  "1182": "security:4799",
+  "1187": "security:4799",
+  "1192": "security:4799",
+  "1197": "security:4799",
+  "1202": "security:4799",
+  "1207": "security:4799",
+  "1409": "security:5140",
+  "1413": "security:4702",
+  "1429": "security:5152",
+  "10964": "system:7036",
+  "10965": "system:7036",
+  "10966": "system:98",
+  "10967": "system:7036",
+  "10968": "system:7036",
+  "11002": "microsoft-windows-kernel-io/op:1",
+  "11003": "microsoft-windows-kernel-io/op:2",
+  "11004": "microsoft-windows-kernel-io/op:1",
+  "11005": "microsoft-windows-kernel-io/op:2",
+  "11006": "microsoft-windows-kernel-io/op:1",
+  "11007": "microsoft-windows-kernel-io/op:2",
+  "11008": "microsoft-windows-kernel-io/op:1",
+  "11009": "microsoft-windows-kernel-io/op:2",
+  "11010": "microsoft-windows-kernel-io/op:1",
+  "11011": "microsoft-windows-kernel-io/op:2",
+  "11012": "microsoft-windows-kernel-io/op:1",
+  "11013": "microsoft-windows-kernel-io/op:2",
+  "11014": "microsoft-windows-kernel-io/op:1",
+  "11015": "microsoft-windows-kernel-io/op:2",
+  "11016": "microsoft-windows-kernel-io/op:1",
+  "11017": "microsoft-windows-kernel-io/op:2",
+  "11018": "microsoft-windows-kernel-io/op:1",
+  "11019": "microsoft-windows-kernel-io/op:2",
+  "11020": "microsoft-windows-kernel-io/op:1",
+  "11021": "microsoft-windows-kernel-io/op:2",
+  "11022": "microsoft-windows-kernel-io/op:1",
+  "11023": "microsoft-windows-kernel-io/op:2",
+  "11024": "microsoft-windows-kernel-io/op:1",
+  "11025": "microsoft-windows-kernel-io/op:2",
+  "11026": "microsoft-windows-kernel-io/op:1",
+  "11027": "microsoft-windows-kernel-io/op:2",
+  "11028": "microsoft-windows-kernel-io/op:1",
+  "11029": "microsoft-windows-kernel-io/op:2",
+  "11030": "microsoft-windows-kernel-io/op:1",
+  "11031": "microsoft-windows-kernel-io/op:2",
+  "11032": "microsoft-windows-kernel-io/op:1",
+  "11033": "microsoft-windows-kernel-io/op:2",
+  "11034": "microsoft-windows-kernel-io/op:1",
+  "11035": "microsoft-windows-kernel-io/op:2",
+  "11036": "microsoft-windows-kernel-io/op:1",
+  "11037": "microsoft-windows-kernel-io/op:2",
+  "11038": "microsoft-windows-kernel-io/op:1",
+  "11039": "microsoft-windows-kernel-io/op:2",
+  "11040": "microsoft-windows-kernel-io/op:1",
+  "11041": "microsoft-windows-kernel-io/op:2",
+  "11042": "microsoft-windows-kernel-io/op:1",
+  "11043": "microsoft-windows-kernel-io/op:2",
+  "11044": "microsoft-windows-kernel-io/op:1",
+  "11045": "microsoft-windows-kernel-io/op:2",
+  "11046": "microsoft-windows-kernel-io/op:1",
+  "11047": "microsoft-windows-kernel-io/op:2",
+  "11048": "microsoft-windows-kernel-io/op:1",
+  "11049": "microsoft-windows-kernel-io/op:2",
+  "11050": "microsoft-windows-kernel-io/op:1",
+  "11051": "microsoft-windows-kernel-io/op:2",
+  "11052": "microsoft-windows-kernel-io/op:1",
+  "11053": "microsoft-windows-kernel-io/op:2",
+  "11056": "microsoft-windows-kernel-io/op:1",
+  "11057": "microsoft-windows-kernel-io/op:2",
+  "11058": "microsoft-windows-kernel-io/op:1",
+  "11059": "microsoft-windows-kernel-io/op:2",
+  "11060": "microsoft-windows-kernel-io/op:1",
+  "11061": "microsoft-windows-kernel-io/op:2",
+  "11062": "microsoft-windows-kernel-io/op:1",
+  "11063": "microsoft-windows-kernel-io/op:2",
+  "11064": "microsoft-windows-kernel-io/op:1",
+  "11065": "microsoft-windows-kernel-io/op:2",
+  "11066": "microsoft-windows-kernel-io/op:1",
+  "11067": "microsoft-windows-kernel-io/op:2",
+  "11068": "microsoft-windows-kernel-io/op:1",
+  "11069": "microsoft-windows-kernel-io/op:2",
+  "11070": "microsoft-windows-kernel-io/op:1",
+  "11071": "microsoft-windows-kernel-io/op:2",
+  "11072": "microsoft-windows-kernel-io/op:1",
+  "11073": "microsoft-windows-kernel-io/op:2",
+  "11074": "microsoft-windows-kernel-io/op:1",
+  "11075": "microsoft-windows-kernel-io/op:2",
+  "11076": "microsoft-windows-kernel-io/op:1",
+  "11077": "microsoft-windows-kernel-io/op:2",
+  "11078": "microsoft-windows-kernel-io/op:1",
+  "11079": "microsoft-windows-kernel-io/op:2",
+  "11080": "microsoft-windows-kernel-io/op:1",
+  "11081": "microsoft-windows-kernel-io/op:2",
+  "11082": "microsoft-windows-kernel-io/op:1",
+  "11083": "microsoft-windows-kernel-io/op:2",
+  "11084": "microsoft-windows-kernel-io/op:1",
+  "11085": "microsoft-windows-kernel-io/op:2",
+  "11086": "microsoft-windows-kernel-io/op:1",
+  "11087": "microsoft-windows-kernel-io/op:2",
+  "11088": "microsoft-windows-kernel-io/op:1",
+  "11089": "microsoft-windows-kernel-io/op:2",
+  "11090": "microsoft-windows-kernel-io/op:1",
+  "11091": "microsoft-windows-kernel-io/op:2",
+  "11092": "microsoft-windows-kernel-io/op:1",
+  "11093": "microsoft-windows-kernel-io/op:2",
+  "11094": "microsoft-windows-kernel-io/op:1",
+  "11095": "microsoft-windows-kernel-io/op:2",
+  "11096": "microsoft-windows-kernel-io/op:1",
+  "11097": "microsoft-windows-kernel-io/op:2",
+  "11098": "microsoft-windows-kernel-io/op:1",
+  "11099": "microsoft-windows-kernel-io/op:2",
+  "11100": "microsoft-windows-kernel-io/op:1",
+  "11101": "microsoft-windows-kernel-io/op:2",
+  "11102": "microsoft-windows-kernel-io/op:1",
+  "11103": "microsoft-windows-kernel-io/op:2",
+  "11104": "microsoft-windows-kernel-io/op:1",
+  "11105": "microsoft-windows-kernel-io/op:2",
+  "11106": "microsoft-windows-kernel-io/op:1",
+  "11107": "microsoft-windows-kernel-io/op:2",
+  "11108": "microsoft-windows-kernel-io/op:1",
+  "11109": "microsoft-windows-kernel-io/op:2",
+  "11110": "microsoft-windows-kernel-io/op:1",
+  "11111": "microsoft-windows-kernel-io/op:2",
+  "11112": "microsoft-windows-kernel-io/op:1",
+  "11113": "microsoft-windows-kernel-io/op:2",
+  "11114": "microsoft-windows-kernel-io/op:1",
+  "11115": "microsoft-windows-kernel-io/op:2",
+  "11116": "microsoft-windows-kernel-io/op:1",
+  "11117": "microsoft-windows-kernel-io/op:2",
+  "11118": "microsoft-windows-kernel-io/op:1",
+  "11119": "microsoft-windows-kernel-io/op:2",
+  "11120": "microsoft-windows-kernel-io/op:1",
+  "11121": "microsoft-windows-kernel-io/op:2",
+  "11122": "microsoft-windows-kernel-io/op:1",
+  "11123": "microsoft-windows-kernel-io/op:2",
+  "11124": "microsoft-windows-kernel-io/op:1",
+  "11125": "microsoft-windows-kernel-io/op:2",
+  "11126": "microsoft-windows-kernel-io/op:1",
+  "11127": "microsoft-windows-kernel-io/op:2",
+  "11129": "microsoft-windows-kernel-io/op:3",
+  "11130": "microsoft-windows-kernel-io/op:1",
+  "11131": "microsoft-windows-kernel-io/op:3"
+ },
+ "spec": {
+  "seed_cmd": [
+   "\"ac i ntds\" \"ifm\""
+  ],
+  "include_parent": true,
+  "artifacts": [
+   "ntds_T1003",
+   "$SNAP_202307190903"
+  ],
+  "source": "SDWIN-230718151900 adversary_view (command, output dir, snapshot mount)"
+ }
+}

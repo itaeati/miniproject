@@ -1,0 +1,40 @@
+# Machine configuration for this Khadas Mind 2 (Core Ultra 7 258V, 32 GB, Arc 140V).
+# Only machine-specific values live here; everything else comes from hdf/default_config.toml.
+
+[paths]
+work_dir = "/home/ubuntu/forensics-option-a/hdf_runs"
+attack_stix = "/home/ubuntu/forensics-option-a/data/attack/enterprise-attack.json"
+
+[server]
+python = "/home/ubuntu/forensics-option-a/venv/bin/python3"
+script = "/home/ubuntu/server_tools/openvino_server.py"
+device = "GPU"
+port = 8086
+cleanup_command = ["bash", "/home/ubuntu/clean_memory.sh"]
+guard_min_available_mb = 2048
+
+[models.triage]
+name = "FoundationSec-8B-Reasoning-OV-INT8"
+path = "/home/ubuntu/llama-models/FoundationSec-8B-Reasoning-OV-INT8"
+enable_thinking = true
+# Its generation_config.json sampling + schema after </think>: target event found 3/3 at
+# 4K and 12K chunks, valid JSON 6/6, no loops (greedy: 0/3 at 12K, loops 3/12) (2026-10-07).
+sampling = "model"
+structured_after = "</think>"
+
+[models.reasoner]
+name = "Gemma-4-26B-OV-INT4"
+path = "/home/ubuntu/llama-models/Gemma-4-26B-OV-INT4"
+# Thinking off + schema: 81 s, valid JSON, hypotheses 5/5 grounded. Thinking on: answer cut
+# off 4/4 in the first run, 7 min per request when it worked (2026-10-07/08).
+enable_thinking = false
+# On a server that already served a request, a later prompt took > 6 GB within ~1 s: longer
+# than the previous one 3/3, and 7,680 tokens after 12,098 in the first full run. A fresh
+# server's first request (2K-12.3K) stayed >= 8.4 GB available 10/10. FoundationSec showed
+# no such growth (2026-10-08).
+fresh_server_per_request = false
+
+[triage]
+# At 12K-token chunks FoundationSec invented command lines and registry keys (all rejected
+# by grounding); at 4K it found the target 3/3 without them (2026-10-07).
+chunk_evidence_tokens = 4000

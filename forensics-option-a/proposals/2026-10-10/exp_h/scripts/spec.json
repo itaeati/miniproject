@@ -1,0 +1,18 @@
+{
+ "win_lsass_comsvcs": {"seed_pid": [["WORKSTATION5", 6100]], "artifacts": ["lsass-comsvcs.dmp"],
+   "source": "SDWIN-201018195009 + README 5.14 (PowerShell 6100 -> rundll32 4824)"},
+ "win_bitsadmin_download": {"seed_cmd": ["/transfer /Download"], "include_parent": true, "artifacts": ["bitsadmin1_flag.ps1"],
+   "source": "SDWIN-201023023651 adversary_view"},
+ "win_mshta_powershell": {"seed_cmd": ["vbscript:Execute("], "include_parent": true, "artifacts": [],
+   "source": "SDWIN-201022025808 adversary_view"},
+ "win_remote_schtask": {"seed_cmd": ["schtasks /create"], "include_parent": true, "artifacts": ["EventCacheManager"],
+   "source": "SDWIN-201219070027 adversary_view (task name)"},
+ "win_auditpol_disable": {"seed_pid": [["pedro-computer", 4392], ["pedro-computer", 6664], ["pedro-computer", 4440], ["pedro-computer", 472], ["pedro-computer", 2752], ["pedro-computer", 7016]],
+   "include_parent": true, "artifacts": [], "source": "SDWIN-220630130349 adversary_view (Process N created)"},
+ "win_ntds_ntdsutil": {"seed_cmd": ["\"ac i ntds\" \"ifm\""], "include_parent": true, "artifacts": ["ntds_T1003", "$SNAP_202307190903"],
+   "source": "SDWIN-230718151900 adversary_view (command, output dir, snapshot mount)"},
+ "win_uac_fodhelper": {"seed_pid": [["WORKSTATION5", 1376], ["WORKSTATION5", 5376]], "artifacts": ["ms-settings\\shell\\open\\command"],
+   "source": "Empire agents table in adversary_view (SP7B3U2X 1376, KU86XWEL 5376); registry path from the module named there"},
+ "win_psremoting": {"seed_pid": [["WORKSTATION5", 6404], ["WORKSTATION5", 5904], ["WORKSTATION6", 6036]], "seed_cmd": ["-noP -sta -w 1 -enc"], "include_parent": true, "artifacts": [],
+   "source": "Empire agents table in adversary_view; remote stager command line = Empire launcher"}
+}

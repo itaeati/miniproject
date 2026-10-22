@@ -1,0 +1,41 @@
+# Experiment I profile "fsec_after" (per-model part only; prompts, quote binding and scoring are common).
+# = fsec with the context block placed after the lines to judge (TUNING.md: fsec run 2 candidate).
+# Same as experiment H (thinking on, model sampling, schema after </think>) plus fresh server per request.
+[paths]
+work_dir = "/home/ubuntu/forensics-option-a/hdf_runs"
+attack_stix = "/home/ubuntu/forensics-option-a/data/attack/enterprise-attack.json"
+
+[server]
+python = "/home/ubuntu/forensics-option-a/venv/bin/python3"
+script = "/home/ubuntu/server_tools/openvino_server.py"
+device = "GPU"
+port = 8086
+cleanup_command = ["bash", "/home/ubuntu/clean_memory.sh"]
+# Common part (every profile): repetition stop at ratio 0.05 instead of hdf's 0.10. 2026-10-08 replay: real loops
+# <= 0.032, legitimate output >= 0.085; with variable packing a 20-line Gemma answer of similar verdicts was cut at
+# 0.10 (exp I, 2026-10-10 20:42).
+repetition_max_ratio = 0.05
+
+[models.triage]
+name = "FoundationSec-8B-Reasoning-OV-INT8"
+path = "/home/ubuntu/llama-models/FoundationSec-8B-Reasoning-OV-INT8"
+enable_thinking = true
+sampling = "model"
+structured_after = "</think>"
+# Gemma: a later, different-length prompt on a used server took > 6 GB within ~1 s (2026-10-08);
+# kept for every profile as the measured-safe setting (a fresh server's first request).
+fresh_server_per_request = true
+
+# Not used by experiment I; hdf's config check needs a second model entry.
+[models.reasoner]
+name = "FoundationSec-8B-Reasoning-OV-INT8"
+path = "/home/ubuntu/llama-models/FoundationSec-8B-Reasoning-OV-INT8"
+enable_thinking = false
+fresh_server_per_request = true
+
+[harness]
+# Requests are packed variably (whole lines; prompt <= max_input_tokens and prompt + expected answer <= context).
+# Expected answer tokens = output_base + output_per_line * lines. fsec exp F (thinking on): answer = 573 + 72.8/line (100 requests), max residual +2,477.
+output_base = 3000
+output_per_line = 100
+context_position = "after"

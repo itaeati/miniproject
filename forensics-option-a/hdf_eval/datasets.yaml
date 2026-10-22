@@ -1,0 +1,55 @@
+# Validation datasets. All come from OTRF Security-Datasets (formerly "Mordor"),
+# a public, widely used collection of attack telemetry recorded in lab
+# environments. Ground truth is read at fetch time from the dataset authors'
+# own metadata (attack_mappings) or, for APT29, from the official emulation
+# plan published in the same repository. Nothing here is hand-labelled.
+
+base_url: https://raw.githubusercontent.com/OTRF/Security-Datasets/master/datasets
+
+datasets:
+  apt29_day1:
+    description: MITRE ATT&CK Evaluations round 2 (APT29), scenario 1 / steps 1-10; 4 Windows hosts
+    files: [compound/apt29/day1/apt29_evals_day1_manual.zip]
+    ground_truth: {emulation_plan: compound/apt29/emulationplans/apt29.xlsx, sheet: 1}
+  apt29_day2:
+    description: MITRE ATT&CK Evaluations round 2 (APT29), scenario 2 / steps 11-20; 4 Windows hosts
+    files: [compound/apt29/day2/apt29_evals_day2_manual.zip]
+    ground_truth: {emulation_plan: compound/apt29/emulationplans/apt29.xlsx, sheet: 2}
+  lsass_procdump_campaign:
+    description: Compound campaign - payload delivery, discovery, LSASS dump with procdump, exfiltration
+    otrf_metadata: compound/_metadata/LSASS_campaign_02.yaml
+  log4shell:
+    description: Log4Shell exploitation (Windows security auditing + Linux auditd/syslog)
+    otrf_metadata: compound/_metadata/Log4Shell.yaml
+  aws_bank_breach:
+    description: AWS CloudTrail - EC2 proxy abuse and S3 exfiltration
+    otrf_metadata: atomic/_metadata/SDAWS-200914011940.yaml
+    file_types: [cloud]
+  linux_arp_discovery:
+    otrf_metadata: atomic/_metadata/SDLIN-201110074812.yaml
+  linux_dd_binary_padding:
+    otrf_metadata: atomic/_metadata/SDLIN-201110081941.yaml
+  win_mimikatz_logonpasswords:
+    otrf_metadata: atomic/_metadata/SDWIN-190518202151.yaml
+  win_lsass_comsvcs:
+    otrf_metadata: atomic/_metadata/SDWIN-201018195009.yaml
+  win_ntds_ntdsutil:
+    otrf_metadata: atomic/_metadata/SDWIN-230718151900.yaml
+  win_run_keys:
+    otrf_metadata: atomic/_metadata/SDWIN-190319023812.yaml
+  win_bitsadmin_download:
+    otrf_metadata: atomic/_metadata/SDWIN-201023023651.yaml
+  win_mshta_powershell:
+    otrf_metadata: atomic/_metadata/SDWIN-201022025808.yaml
+  win_uac_fodhelper:
+    otrf_metadata: atomic/_metadata/SDWIN-200904032946.yaml
+  win_remote_schtask:
+    otrf_metadata: atomic/_metadata/SDWIN-201219070027.yaml
+  win_sharpwmi_exec:
+    otrf_metadata: atomic/_metadata/SDWIN-200806035621.yaml
+  win_sharpsc_create:
+    otrf_metadata: atomic/_metadata/SDWIN-200806022635.yaml
+  win_psremoting:
+    otrf_metadata: atomic/_metadata/SDWIN-190518211456.yaml
+  win_auditpol_disable:
+    otrf_metadata: atomic/_metadata/SDWIN-220630130349.yaml

@@ -1,0 +1,136 @@
+# Default configuration for the hypothesis drill-down forensic engine (hdf).
+# Machine-specific values (model paths, server script, cleanup hook) belong in a
+# separate file passed with --config; anything set there overrides these defaults.
+
+[paths]
+# Run directories are created below this directory unless --out is given.
+work_dir = "./hdf_runs"
+# MITRE ATT&CK Enterprise STIX bundle used to validate technique IDs and to
+# detect threat-actor / software names that are not backed by evidence.
+attack_stix = "./data/attack/enterprise-attack.json"
+attack_stix_url = "https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master/enterprise-attack/enterprise-attack.json"
+
+[budget]
+# Total context of the deployment target; every request must fit inside it.
+context_tokens = 16384
+# Prompt tokens (system + instructions + evidence) allowed per request.
+max_input_tokens = 12288
+# Generation tokens reserved per request (reasoning + answer).
+max_output_tokens = 4096
+# Tokens kept free inside the input budget to absorb template differences.
+safety_margin_tokens = 64
+
+[ingest]
+# Ordered candidates for the event timestamp. If none is present, the first
+# field whose value parses as a timestamp is used.
+timestamp_keys = ["UtcTime", "@timestamp", "timestamp", "TimeCreated.SystemTime", "TimeCreated",
+                  "eventTime", "EventTime", "time", "ts", "datetime", "date", "_time", "CreationTime"]
+host_keys = ["Hostname", "host.name", "hostname", "Computer", "computer_name", "ComputerName",
+             "DeviceName", "agent.hostname", "host"]
+# Timezone assumed for timestamps that carry no offset.
+default_timezone = "UTC"
+# Year for year-less syslog timestamps; 0 = use the file's modification year.
+assume_year = 0
+# JSON documents (not JSON lines) larger than this are rejected rather than loaded.
+max_json_document_mb = 1024
+# Archives found in the evidence directory are extracted into the run directory.
+extract_archives = true
+
+[view]
+# How events are rendered for the LLM. Full events stay in the evidence store
+# and are used for drill-down search and for grounding checks.
+max_value_chars = 1500
+drop_guid_values = true
+drop_source_constant_fields = true
+drop_redundant_text_fields = true
+
+[coverage]
+# "full": every event pattern is read by the triage model.
+# "budget": patterns are ranked by rarity and read until llm_token_budget is spent.
+mode = "full"
+llm_token_budget = 0
+
+[triage]
+# Maximum attempts per chunk before it is split in half.
+attempts_per_chunk = 2
+# Chunks are split at most this many times on repeated failure.
+max_split_depth = 3
+# Continue to the investigation phase even if some chunks failed.
+allow_partial = false
+# Evidence tokens per chunk; 0 = whatever fits in the input budget.
+chunk_evidence_tokens = 0
+
+[investigation]
+max_iterations = 4
+max_hypotheses = 5
+# Evidence tokens supplied to each hypothesis evaluation.
+evidence_tokens = 7000
+# Matches sampled per query (spread across the time range of all matches).
+matches_per_query = 6
+# Same-host chronological neighbours shown around each match.
+neighbor_events = 3
+max_queries_per_hypothesis = 4
+max_pivots_per_iteration = 8
+
+[report]
+# Ask the reasoning model for a narrative summary; every sentence is checked
+# against cited evidence and dropped if it cannot be verified.
+narrative = true
+
+[server]
+# true: hdf starts/stops the model servers itself. false: use whatever is
+# already listening on host:port (the model name reported by /health must match).
+manage = true
+python = "python3"
+script = ""
+device = "GPU"
+host = "127.0.0.1"
+port = 8086
+startup_timeout_s = 900
+request_timeout_s = 3600
+retries = 3
+# Optional command run after a server is stopped (e.g. a memory cleanup script).
+cleanup_command = []
+# Refuse to start when the port is used by a process hdf did not start.
+kill_port_owner = false
+# Memory guard (hdf/memguard.py): the GPU uses system RAM, so a runaway request can
+# exhaust it. While a server hdf started is running, its process group is killed with
+# SIGKILL when MemAvailable drops below the floor (swap is only recorded);
+# the run then stops with exit code 5 and logs/memory_guard.json. Only applies when
+# manage = true (hdf cannot kill a server it did not start).
+memory_guard = true
+guard_min_available_mb = 6144
+guard_poll_interval_s = 0.05
+# Stop a generation that repeats itself: every 32 tokens the last window_chars
+# characters (digits masked) are compressed; a ratio below max_ratio is a loop.
+# Replayed on 23 recorded outputs: 4/4 loops stopped, 0/19 normal outputs (2026-10-07).
+# window 0 disables.
+repetition_window_chars = 4000
+repetition_max_ratio = 0.10
+
+[models.triage]
+name = ""
+path = ""
+enable_thinking = true
+max_input_tokens = 0   # 0 = budget.max_input_tokens
+max_output_tokens = 0  # 0 = budget.max_output_tokens
+# Restart the model server before every request (retries included) that would not be the
+# first one sent to the server process (for models that take extra memory on later requests).
+fresh_server_per_request = false
+# Decoding: "greedy", or "model" = the sampling settings in the model's generation_config.json.
+sampling = "greedy"
+# The server constrains every answer to the JSON schema of its prompt (hdf/output_schemas.py).
+structured_output = true
+# With enable_thinking = true: the reasoning end marker; the schema applies after it.
+structured_after = ""
+
+[models.reasoner]
+name = ""
+path = ""
+enable_thinking = true
+max_input_tokens = 0
+max_output_tokens = 0
+fresh_server_per_request = false
+sampling = "greedy"
+structured_output = true
+structured_after = ""
